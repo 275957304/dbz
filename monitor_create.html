@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 -- 设备监测</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li><a href="assets.html">我的资产</a></li>
+		<li class="active"><a href="monitor.html">我的监测</a></li>
+		<li><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="monitor.html">当前告警</a>
+	<a href="monitor_equipment.html" class="active">设备监测</a>
+	<a href="monitor_engine.html">机房监测</a>
+	<a href="monitor_offline.html">离线计划管理</a>
+	<a href="monitor_history.html">历史告警</a>
+</div>
+
+ 
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="monitor.html">我的监测</a></li>
+		<li class="active">创建监测</li>
+	</ol>
+	
+	<div class="box">
+		<div class="box-header with-border">
+			选择一台未纳管的服务器，创建一个新的监测
+		</div>
+		<div class="box-body">	
+			<div class="p10">
+				<div class="mb10">
+					<button data-target="#createMonitor" data-toggle="modal" type="button" class="btn btn-info mr10"><i class="fa fa-pencil"></i> 创建监测</button><span class="text-muted">选择一台未纳管的服务器</span>
+				</div>
+				<table class="table table-bordered table-striped table-hover" data-toggle="table" data-mobile-responsive="true" data-pagination="true" data-page-size="10">
+					<thead>
+						<tr>
+							<th>选择</th>
+							<th>带外IP</th>
+							<th>设备名称</th>
+							<th>设备类型</th>
+							<th>所在位置</th>
+							<th>厂商</th>
+							<th>代理商</th>
+							<th>购买日期</th>
+							<th>责任人</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="radio" name="create" id="select1" value="option1"></td>
+							<td>192.168.100.25</td>
+							<td>生产数据库服务器1</td>
+							<td>X86服务器</td>
+							<td>广州</td>
+							<td>HP</td>
+							<td>深圳神风代理</td>
+							<td>2015-11-12</td>
+							<td>李明</td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="create" id="select2" value="option2"></td>
+							<td>192.168.100.25</td>
+							<td>生产数据库服务器1</td>
+							<td>X86服务器</td>
+							<td>广州</td>
+							<td>HP</td>
+							<td>深圳神风代理</td>
+							<td>2015-11-12</td>
+							<td>李明</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- 创建监测弹出框 -->
+<div class="modal fade" id="createMonitor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				创建监测对象
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal modal-scroll">
+					<div class="form-group">
+						<label class="col-sm-3 control-label"><span class="text-red">*</span> 设备型号:</label>
+						<div class="col-sm-6">
+							<input type="text" placeholder="HP BL860" class="form-control">
+							<p>服务器的型号信息</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label"><span class="text-red">*</span> IP地址:</label>
+						<div class="col-sm-6">
+							<input type="text" placeholder="请输入IP地址" class="form-control">
+							<p>服务器的带外IP</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">SNMP配置信息:</label>
+						<div class="col-sm-8">
+							<span class="label label-primary inline-block p5">设置SNMP信息</span>
+							<p class="mt10">填写SNMP配置信息后， 可以对该设备进行状态监测</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label"><span class="text-red">*</span> SNMP方式:</label>
+						<div class="col-sm-6">
+							<ul class="nav select-time clearfix"> 
+								<li role="presentation" class="active"><a href="#one" id="one-tab" role="tab" data-toggle="tab" aria-controls="one" aria-expanded="true"><b>1C</b></a></li>
+								<li role="presentation"><a href="#two" id="two-tab" role="tab" data-toggle="tab" aria-controls="two" aria-expanded="true"><b>2C</b></a></li>
+								<li role="presentation"><a href="#three" id="three-tab" role="tab" data-toggle="tab" aria-controls="three" aria-expanded="true"><b>3C</b></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="tab-content select-time-box" id="myTabContent">	
+						<!-- SNMP方式 1C -->
+						<div role="tabpanel" class="tab-pane fade in active" id="one" aria-labelledBy="one-tab">
+							<div class="form-group">
+								<label class="col-sm-3 control-label"><span class="text-red">*</span> SNMP端口:</label>
+								<div class="col-sm-6">
+									<input type="text" placeholder="请输入SNMP端口" class="form-control">
+									<p>请填写SNMP代理程序的监听端口，默认为UDP 161，通常您不需要修改它。</p>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">SNMP团体名:</label>
+								<div class="col-sm-6">
+									<input type="text" placeholder="请输入SNMP团体名" class="form-control">
+								</div>
+							</div>
+						</div><!-- SNMP方式 1C -->
+						
+						<!-- SNMP方式 2C -->
+						<div role="tabpanel" class="tab-pane fade" id="two" aria-labelledBy="two-tab">
+							<div class="form-group">
+								<label class="col-sm-3 control-label"><span class="text-red">*</span> SNMP端口:</label>
+								<div class="col-sm-6">
+									<input type="text" placeholder="请输入SNMP端口" class="form-control">
+									<p>请填写SNMP代理程序的监听端口，默认为UDP 161，通常您不需要修改它。</p>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">SNMP团体名:</label>
+								<div class="col-sm-6">
+									<input type="text" placeholder="请输入SNMP团体名" class="form-control">
+								</div>
+							</div>
+						</div><!-- SNMP方式 2C -->
+						
+						<!-- SNMP方式 3C -->
+						<div role="tabpanel" class="tab-pane fade" id="three" aria-labelledBy="three-tab">
+							<div class="form-group">
+								<label class="col-sm-3 control-label"><span class="text-red">*</span> SNMP端口:</label>
+								<div class="col-sm-6">
+									<input type="text" placeholder="请输入SNMP端口" class="form-control">
+									<p>请填写SNMP代理程序的监听端口，默认为UDP 161，通常您不需要修改它。</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Security Name:</label>
+								<div class="col-sm-6">
+									<input type="text" placeholder="请输入Security Name" class="form-control">
+									<p>请填写用于访问ＳＮＭＰ代理的用户名</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">SNMP文本名称:</label>
+								<div class="col-sm-6">
+									<input type="text" placeholder="请输入SNMP文本名称" class="form-control">
+									<p>请填写用于访问ＳＮＭＰ代理的用户名</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">SNMP安全级别:</label>
+								<div class="col-sm-6">
+									<input type="text" placeholder="请输入SNMP文本名称" class="form-control">
+									<p>请选择SNMP的安全级别</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">SNMP验证算法:</label>
+								<div class="col-sm-6">
+									<div class="radio-inline"><label><input type="radio" name="SNMP" id="MD5" value="MD5" checked=""> MD5</label></div>
+									<div class="radio-inline"><label><input type="radio" name="SNMP" id="SHA" value="SHA" checked=""> SHA</label></div>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">SNMP验证密码:</label>
+								<div class="col-sm-6">
+									<input type="text" placeholder="请输入SNMP验证密码" class="form-control">
+									<p>请填写用于访问SNMP代理的密码，SNMP协议规定其不少于8个字节</p>
+								</div>
+							</div>
+							
+						</div><!-- SNMP方式 3C -->
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-6">
+							<button type="button" class="btn btn-success mr10">提交</button>
+							<button data-dismiss="modal" class="btn btn-default" type="button">关闭</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+ 
+
+
+
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+<!-- BootstrapTable -->
+<link rel="stylesheet" href="plugins/BootstrapTable/bootstrap-table.min.css">
+<script src="plugins/BootstrapTable/bootstrap-table.min.js"></script>
+<script src="plugins/BootstrapTable/bootstrap-table-zh-CN.min.js"></script>
+</body>
+</html>

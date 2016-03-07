@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 -- 设备资产</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li class="active"><a href="assets.html">我的资产</a></li>
+		<li><a href="monitor.html">我的监测</a></li>
+		<li><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="assets.html" class="active">设备资产</a>
+	<a href="assets_business.html">业务资产</a>
+	<a href="assets_engineroom.html">机房机架</a>
+	<a href="assets_responsible.html">责任人管理</a>
+	<a href="assets_agents.html">代理商信息</a>
+</div>
+ 
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="assets.html">资产管理</a></li>
+		<li><a href="#">设备资产</a></li>
+		<li class="active">生产数据库服务器</li>
+	</ol>
+	
+	<div class="box">
+		<div class="box-header with-border">
+			<i class="fa fa-server"></i>
+			生产数据库服务器
+		</div>
+		<div class="box-body">
+		<div class="p10">
+			
+			<div class="alert alert-green p5"><b>填写指引：</b>第一步，填写设备的基本信息，保存成功后，继续完善设备的配置信息，以及管理信息。</div>
+			
+			<div class="mt10">
+				<div class="btn-group btn-group-justified assets-tab">
+					<a class="btn btn-default active" href="assets_info.html"><i class="fa fa-sticky-note"></i> 基本信息</a>
+					<a class="btn btn-default" href="assets_info2.html"><i class="fa fa-user"></i> 管理信息</a>
+					<a class="btn btn-default" href="assets_info3.html"><i class="fa fa-cogs"></i> 配置信息</a>
+				</div>
+			</div>
+			
+			<div class="assets-box">
+				<form class="form-horizontal">
+					<!--第一步：填写设备信息-->
+					<div class="panel panel-default no-shadow">
+						<div class="panel-heading">第一步：填写设备信息</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="ip">带外IP</label>
+								<div class="col-sm-4">
+									<input type="text" placeholder="请填带外IP" id="ip" class="form-control">
+									<p>设备的管理口IP，用来连接监测代理机，获取各部件状态信息</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="name">设备名称</label>
+								<div class="col-sm-4">
+									<input type="text" placeholder="请输入设备名称" id="name" class="form-control">
+									<p>设备的名称，相当于机器的名字，便于记忆</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="userName">用户名</label>
+								<div class="col-sm-4">
+									<input type="text" placeholder="请输用户名" id="userName" class="form-control">
+									<p>带外管理的用户名</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="paw">密码</label>
+								<div class="col-sm-4">
+									<input type="text" placeholder="请输密码" id="paw" class="form-control">
+									<p>带外管理的用户名对应密码</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="type">设备类型</label>
+								<div class="col-sm-4">
+									<select class="form-control" id="type">
+										<option value="服务器设备">服务器设备</option>
+										<option value="存储设备">存储设备</option>
+										<option value="网络设备">网络设备</option>
+										<option value="电源设备">电源设备</option>
+										<option value="环境设备">环境设备</option>
+									</select>
+									<p>设备的出厂唯一标识号，相当于机器的身份证</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="getStyle">类 别</label>
+								<div class="col-sm-4">
+									<select class="form-control" id="getStyle">
+										<option value="刀片">刀片</option>
+										<option value="刀箱">刀箱</option>
+										<option value="机架">机架</option>
+									</select>
+									<p>在每个设备类型下的类别分类，如服务器有刀箱，机架...</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="cs">厂 商</label>
+								<div class="col-sm-4">
+									<select class="form-control" id="cs">
+										<option value="DELL">DELL</option>
+										<option value="HP">HP</option>
+										<option value="华为">华为</option>
+										<option value="浪潮">浪潮</option>
+										<option value="IBM">IBM</option>
+									</select>
+									<p>设备的出厂唯一标识号，相当于机器的身份证</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="textarea">备 注</label>
+								<div class="col-sm-5">
+									<textarea id="textarea" class="form-control" rows="2"></textarea>
+								</div>
+							</div>
+						</div>
+					</div><!--第一步：填写设备信息END-->
+					
+					
+					<!--第二步：填写设备网络设置信息-->
+					<div class="panel panel-default no-shadow">
+						<div class="panel-heading">第二步：填写设备网络设置信息</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="ip2">生产IP</label>
+								<div class="col-sm-4">
+									<input type="text" placeholder="请填生产IP" id="ip2" class="form-control">
+									<p>设备的出厂唯一标识号，相当于机器的身份证</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="code">子网掩码</label>
+								<div class="col-sm-4">
+									<input type="text" placeholder="请输入子网掩码" id="code" class="form-control">
+									<p>设备的出厂唯一标识号，相当于机器的身份证</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="intenOff">网 关</label>
+								<div class="col-sm-4">
+									<input type="text" placeholder="请输入网关" id="intenOff" class="form-control">
+									<p>设备的出厂唯一标识号，相当于机器的身份证</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="system">操作系统</label>
+								<div class="col-sm-4">
+									<select id="system" class="form-control">
+										<option value="Windows">Windows</option>
+										<option value="Linux">Linux</option>
+										<option value="Unix">Unix</option>
+									</select>
+									<p>设备安装的OS</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="link">远程连接</label>
+								<div class="col-sm-4">
+									<select id="link" class="form-control">
+										<option value="telnet">telnet</option>
+										<option value="oos">oos</option>
+									</select>
+									<p>设备安装的OS</p>
+								</div>
+							</div>
+						</div>
+					</div><!--第二步：填写设备网络设置信息END-->
+					
+					<!--第三步：填写设备位置信息-->
+					<div class="panel panel-default no-shadow">
+						<div class="panel-heading">第三步：填写设备位置信息</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="home">所在机房</label>
+								<div class="col-sm-6">
+									<div class="row">	 
+										<div class="col-sm-6">
+											<select class="form-control">
+												<option value="大湾机房">大湾机房</option>
+												<option value="福田机房">福田机房</option>
+											</select>
+										</div>
+										<div class="col-sm-6">
+											<p class="form-control-static">没有可选机房？<a class="btn btn-info btn-xs" href="assets_engineroom_edit.html"><i class="fa fa-plus"></i> 新增一个机房</a></p>
+										</div>
+									</div>
+									<p>设备的出厂唯一标识号，相当于机器的身份证</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="home">所属机柜</label>
+								<div class="col-sm-6">
+									<div class="row">	 
+										<div class="col-sm-6">
+											<select class="form-control">
+												<option value="一体机柜A">一体机柜A</option>
+												<option value="一体机柜B">一体机柜B</option>
+											</select>
+										</div>
+										<div class="col-sm-6">
+											<p class="form-control-static">没有可选机架？<a class="btn btn-info btn-xs" href="assets_engineroom_edit2.html"><i class="fa fa-plus"></i> 新增一个机柜</a></p>
+										</div>
+									</div>
+									<p>设备的出厂唯一标识号，相当于机器的身份证</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="add" class="col-sm-3 control-label">机柜位置</label>
+								<div class="col-sm-4">
+									<div class="input-group">
+										<input type="text" aria-describedby="basic-addon2" placeholder="请输入机柜位置" class="form-control">
+										<span id="basic-addon2" class="input-group-addon">U</span>
+									</div>
+									<p>标记设备放置机架的具体位置</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="details" class="col-sm-3 control-label">位置描述</label>
+								<div class="col-sm-5">
+									<textarea rows="2" class="form-control" id="details"></textarea>
+								</div>
+							</div>
+						</div>
+					</div><!--第三步：填写设备位置信息END-->
+					<div class="form-group">
+						<div class="col-sm-offset-4 col-sm-5">
+							<button type="button" class="btn btn-success mr10"> 保 存 </button>
+							<button type="button" class="btn btn-default"> 返 回 </button>
+						</div>
+					</div>
+					<br/>
+				</form>
+			</div>
+ 
+		</div>
+		</div>
+	</div>
+</div>
+  
+
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+</body>
+</html>

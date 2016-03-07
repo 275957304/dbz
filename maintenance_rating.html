@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 -- 确认解决</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li><a href="assets.html">我的资产</a></li>
+		<li><a href="monitor.html">我的监测</a></li>
+		<li class="active"><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="maintenance.html" class="active">当前故障处理</a>
+	<a href="maintenance_history.html">历史维保信息</a>
+	<a href="maintenance_renewal.html">续保管理</a>
+</div>
+
+ 
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="maintenance.html">设备维保</a></li>
+		<li class="active">维保详情</li>
+	</ol>
+	
+	<div class="box">
+		<div class="box-header with-border">
+			<i class="fa fa-calendar-check-o"></i>
+			故障处理评价
+		</div>
+		<div class="box-body">
+			<div class="p10">
+				<div class="row">
+					<div class="col-sm-offset-3 col-sm-6">
+						<div class="media">
+							<div class="media-left">
+								<a href="#">
+									<img src="images/cpu.jpg" style="width: 80px; height: 80px;" class="media-object" alt="64x64">
+								</a>
+							</div>
+							<div class="media-body">
+								<ul class="list-unstyled confirm-list">
+									<li><span>故障发生时间:</span> 2016-5-6 12:45:09</li>
+									<li><span>故障描述:</span> 2016-5-6 12:45:09</li>
+									<li><span>故障解除时间:</span> 2016-5-6 12:45:09</li>
+									<li><span>目前状态:</span> 正常</li>
+								</ul>	
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-sm-12">
+						<div class="alert alert-green p5 mt10"><b>您的评价，是服务商最大的动力</b></div>
+					</div>
+					
+					<div class="col-sm-offset-2 col-sm-6">
+						<div class="raty">
+							<dl class="dl-horizontal">
+								<dt><span class="text-red">*</span> 响应速度</dt>
+								<dd><div class="raty-num" id="ratySpeed"></div></dd>
+							</dl>
+							<dl class="dl-horizontal">
+								<dt><span class="text-red">*</span> 服务态度</dt>
+								<dd><div class="raty-num" id="ratyService"></div></dd>
+							</dl>
+							<dl class="dl-horizontal">
+								<dt><span class="text-red">*</span> 解决故障速度</dt>
+								<dd><div class="raty-num" id="ratySolve"></div></dd>
+							</dl>
+							
+							<dl style="height:90px;" class="dl-horizontal">
+								<dt>评价</dt>
+								<dd>
+									<textarea rows="3" class="form-control"></textarea>
+								</dd>
+							</dl>
+							
+							<dl class="dl-horizontal">
+								<dd>
+									<button type="button" class="btn btn-success mr10"> 提交评论 </button>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+  
+
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+<script src="plugins/score/jquery.raty.min.js"></script> <!--评分插件-->
+<script type="text/javascript">
+$(function() {
+	$('.raty-num').raty({
+		path: 'images/admin',  //这个是图片路径    starOff:"images/admin/star-off.png",starOn:"images/admin/star-on.png"
+		size:25, 
+		score: function() {//这里会返回一个 <input type="hidden" name="score" value="2">
+			return $(this).attr('data-score');
+		}
+	});
+});
+</script>
+</body>
+</html>

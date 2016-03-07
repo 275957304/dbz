@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+
+<!--下面是chartjs插件兼容IE8-->
+<!--[if lte IE 8]>
+	<script src="plugins/chartjs/excanvas.min.js"></script>
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li class="active"><a href="admin.html">概览</a></li>
+		<li><a href="assets.html">我的资产</a></li>
+		<li><a href="monitor.html">我的监测</a></li>
+		<li><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="admin.html">监测概览</a>
+	<a href="assets_overview.html" class="active">资产概览</a>
+</div>
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="admin.html">概览</a></li>
+		<li class="active">资产概览</li>
+	</ol>
+	
+	<!--设备资产-->
+	<div class="box box-default">
+		<div class="box-header with-border">
+			<i class="fa fa-pie-chart"></i>
+			设备资产
+		</div>
+		<div class="box-body">
+
+			<section class="col-md-6">
+				<div class="row">
+					<div class="col-md-3 col-md-offset-1">
+						<ul class="list-unstyled">
+							<li><i class="fa fa-circle-o text-red"></i> X86服务器</li>
+							<li><i class="fa fa-circle-o text-green"></i> 小型机</li>
+							<li><i class="fa fa-circle-o text-yellow"></i> 存储</li>
+							<li><i class="fa fa-circle-o text-danger"></i> 电源设备</li>
+							<li><i class="fa fa-circle-o text-info"></i> 网络设备</li>
+						</ul>	
+					</div>
+					<div class="col-md-8">
+						<canvas width="250" height="250" id="AssetsChart" ></canvas>
+					</div>
+
+				</div>
+			</section>
+			<section class="col-md-6">
+				<br/>
+				<table class="table table-bordered">
+					<tbody>
+						<tr>
+							<td>X86服务器</td>
+							<td> <b>10</b> 台</td>
+							<td>受控 <b>8</b> 台</td>
+							<td><a href="assets_info.html" class="btn btn-default btn-xs"><i class="fa fa-plus"></i> 增加服务器</a></td>
+							<td><a href="monitor_create.html" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> 创建受控</a></td>
+						</tr>
+						<tr>
+							<td>小型机</td>
+							<td> <b>1</b> 台</td>
+							<td>受控 <b>0</b> 台</td>
+							<td><a href="assets_info.html" class="btn btn-default btn-xs"><i class="fa fa-plus"></i> 增加服务器</a></td>
+							<td></td>
+						</tr> 
+						<tr>
+							<td>存储</td>
+							<td> <b>1</b> 台</td>
+							<td>受控 <b>0</b> 台</td>
+							<td><a href="assets_info.html" class="btn btn-default btn-xs"><i class="fa fa-plus"></i> 增加存储</a></td>
+							<td></td>
+						</tr> 
+						<tr>
+							<td>电源设备</td>
+							<td> <b>2</b> 台</td>
+							<td>受控 <b>0</b> 台</td>
+							<td><a href="assets_info.html" class="btn btn-default btn-xs"><i class="fa fa-plus"></i> 增加电源设备</a></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>网络设备</td>
+							<td><b>5</b> 台</td>
+							<td>受控 <b>0</b> 台</td>
+							<td><a href="#" class="btn btn-default btn-xs"><i class="fa fa-plus"></i> 增加网络设备</a></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>环境设备</td>
+							<td><b>0</b> 台</td>
+							<td>受控 <b>0</b> 台</td>
+							<td><a href="assets_info.html" class="btn btn-default btn-xs"><i class="fa fa-plus"></i> 增加设备</a></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+		</div>
+	</div>
+	
+	
+	<!--设备资产-->
+	<div class="box box-default">
+		<div class="box-header with-border">
+			<i class="fa fa-user"></i>
+			设备责任人
+		</div>
+		<div class="box-body">
+
+			<section class="col-md-6">
+				<div class="box responsible-box">
+					<div class="box-header">
+						<p class="box-title">责任人：<b>李明</b></p>
+					</div>
+					<div class="box-body">
+						<ul>
+							<li>
+								<span class="badge">3台</span>
+								<a class="mr10" href="assets.html">X86服务器</a>
+								<a class="btn bg-yellow btn-xs" href="monitor_equipment.html"><i class="fa fa-exclamation-circle"></i> 1台</a> 
+								<a class="btn bg-red btn-xs" href="monitor_equipment.html"><i class="fa fa-times-circle"></i> 2台</a> 
+							</li>
+							
+							<li>
+								<span class="badge">1台</span>
+								<a class="mr10" href="assets.html">小型机</a>
+							</li>
+							
+							<li>
+								<span class="badge">3台</span>
+								<a class="mr10" href="assets.html">存储</a>
+							</li>
+							
+							<li>
+								<span class="badge">1台</span>
+								<a class="mr10" href="assets.html">电源设备</a>
+							</li>
+							
+							<li>
+								<span class="badge">4台</span>
+								<a class="mr10" href="assets.html">网络设备</a>
+							</li>
+							
+							<li>
+								<span class="badge">2台</span>
+								<a class="mr10" href="assets.html">环境设备</a>
+							</li>
+						</ul> 
+					</div>
+				</div>
+			
+			</section>
+			
+			<section class="col-md-6">
+				<div class="box responsible-box">
+					<div class="box-header">
+						<p class="box-title">责任人：<b>张大力</b></p>
+					</div>
+					<div class="box-body">
+						<ul>
+							<li>
+								<span class="badge">3台</span>
+								<a class="mr10" href="assets.html">X86服务器</a>
+								<a class="btn bg-green btn-xs" href="monitor_equipment.html"><i class="fa fa-check-circle"></i> 3台</a> 
+							</li>
+							
+							<li>
+								<span class="badge">1台</span>
+								<a class="mr10" href="assets.html">小型机</a>
+							</li>
+							
+							<li>
+								<span class="badge">3台</span>
+								<a class="mr10" href="assets.html">存储</a>
+							</li>
+							
+						</ul> 
+					</div>
+				</div>
+			</section>
+				
+
+ 
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+ 
+  
+  
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+<!-- FastClick -->
+<script src="plugins/fastclick/fastclick.js"></script>
+
+
+<!-- SlimScroll 1.3.0  滚动条-->
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="plugins/slimScroll/dome.slimscroll.js"></script>
+
+<!-- ChartJS 1.0.1 绘图,折线图、柱状图-->
+<script src="plugins/chartjs/Chart.min.js"></script>
+<script style="text/javascript">
+	$(window).load(function(){ 
+		//设备资产
+		var pieData = [
+			{value: 20,color:"#dd4b39"},
+			{value : 35,color : "#00a65a"},
+			{value : 10,color : "#f39c12"},
+			{value : 5,color : "#a94442"},
+			{value : 10,color : "#31708f"}
+		]
+		var myPie = new Chart(document.getElementById("AssetsChart").getContext("2d")).Pie(pieData);
+	});
+</script>
+</body>
+</html>

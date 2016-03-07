@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 -- 设备监测日志</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li><a href="assets.html">我的资产</a></li>
+		<li class="active"><a href="monitor.html">我的监测</a></li>
+		<li><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="monitor.html">当前告警</a>
+	<a class="active" href="monitor_equipment.html">设备监测</a>
+	<a href="monitor_engine.html">机房监测</a>
+	<a href="monitor_offline.html">离线计划管理</a>
+	<a href="monitor_history.html">历史告警</a>
+</div>
+
+ 
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="monitor.html">我的监测</a></li>
+		<li><a href="monitor_equipment.html">设备监测</a></li>
+		<li class="active">设备监测日志</li>
+	</ol>
+	
+	<div class="box"> 
+		<div class="box-header with-border">
+			<div class="alert alert-green m0 p5 clearfix">
+				<a class="btn btn-default btn-sm pull-right" href="#"><i class="glyphicon glyphicon-share-alt"></i> 导出告警</a>
+				系统只保留最近3个月的设备日志信息, 如需要, 请及时导出数据备份
+			</div>
+		</div>
+		<div class="box-body">	
+			
+			
+			<!--ul class="nav nav-pills nav-justified"-->
+			<div class="equipment-tab">
+				<ul class="nav nav-pills nav-justified ie-nav4"> 
+					<li role="presentation" class="active"><a href="#maintenance" id="maintenance-tab" role="tab" data-toggle="tab" aria-controls="maintenance" aria-expanded="true">设备监测日志</a></li>
+					<li role="presentation"><a href="#fault" id="fault-tab" role="tab" data-toggle="tab" aria-controls="fault" aria-expanded="true">系统故障日志</a></li>
+					<li role="presentation"><a href="#syslog" id="syslog-tab" role="tab" data-toggle="tab" aria-controls="syslog" aria-expanded="true">Syslog</a></li>
+					<li role="presentation"><a href="#snmpTrap" id="snmpTrap-tab" role="tab" data-toggle="tab" aria-controls="snmpTrap" aria-expanded="true">SnmpTrap</a></li>
+				</ul>
+				
+				<div class="tab-content" id="myTabContent">
+					<!--设备监测日志-->
+					<div role="tabpanel" class="tab-pane fade in active" id="maintenance" aria-labelledBy="maintenance-tab">
+						<form class="form-inline text-center p10 ie-maintenance-tab">		
+							<select class="form-control mr10">
+								<option value="选择监测状态">选择监测状态</option>
+								<option value="监测中">监测中</option>
+								<option value="暂停监测">暂停监测</option>
+								<option value="执行离线计划">执行离线计划</option>
+							</select>
+							<input class="form-control selecTime" type="text" placeholder="开始时间" value=""> <!-- selecTime这个是控制时间的 如果要精确到小时 selecTime-hh  -->
+							<div class="checkbox text-muted">至</div>
+							<input class="form-control mr10 selecTime" type="text" placeholder="停止时间" value=""> <!-- selecTime这个是控制时间的 如果要精确到小时 selecTime-hh  -->
+							<button class="btn btn-default mr10" type="submit"><i class="fa fa-search"></i> 搜索</button>
+						</form>
+						<div class="p10">
+							<table class="table table-bordered table-striped" data-toggle="table" data-mobile-responsive="true" data-pagination="true" data-page-size="10">
+								<thead>
+									<tr>
+										<th>监测状态</th>
+										<th data-sortable="true">开始时间</th>
+										<th data-sortable="true">停止时间</th>
+										<th>监测停止原因</th>
+										<th>操作人</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>监测中</td>
+										<td>2015-11-12 16:45:26</td>
+										<td>2016-5-6 11:45:28</td>
+										<td>暂停监测</td>
+										<td>李明</td>
+									</tr>
+									<tr>
+										<td>监测中</td>
+										<td>2015-11-12 16:45:26</td>
+										<td>2016-5-6 11:45:28</td>
+										<td>暂停监测</td>
+										<td>李明</td>
+									</tr>
+									<tr>
+										<td>监测中</td>
+										<td>2015-11-12 16:45:26</td>
+										<td>2016-5-6 11:45:28</td>
+										<td>暂停监测</td>
+										<td>李明</td>
+									</tr>
+									<tr>
+										<td>监测中</td>
+										<td>2015-11-12 16:45:26</td>
+										<td>2016-5-6 11:45:28</td>
+										<td>暂停监测</td>
+										<td>李明</td>
+									</tr>
+									<tr>
+										<td>监测中</td>
+										<td>2015-11-12 16:45:26</td>
+										<td>2016-5-6 11:45:28</td>
+										<td>暂停监测</td>
+										<td>李明</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!--设备监测日志 END-->
+					
+					<!--系统故障日志-->
+					<div role="tabpanel" class="tab-pane fade" id="fault" aria-labelledBy="fault-tab">
+						<form class="form-inline text-center p10 ie-fault">		
+							<select class="form-control mr10">
+								<option value="选择故障级别">选择故障级别</option>
+								<option value="严重">严重</option>
+								<option value="主要">主要</option>
+								<option value="警告">警告</option>
+							</select>
+							<button class="btn btn-default mr10" type="submit"><i class="fa fa-search"></i> 搜索</button>
+						</form>
+						<div class="p10">
+							<table class="table table-bordered table-striped" data-toggle="table" data-mobile-responsive="true" data-pagination="true" data-page-size="10">
+								<thead>
+									<tr>
+										<th>故障级别</th>
+										<th>故障内容</th>
+										<th data-sortable="true">发生时间</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>严重</td>
+										<td>The chassis is open while the power is off.</td>
+										<td>2016-5-6 11:45:28</td>
+									</tr>
+									<tr>
+										<td>主要</td>
+										<td>CPU 1 machine check error detected.</td>
+										<td>2016-5-6 11:45:28</td>
+									</tr> 
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!--系统故障日志END-->
+					
+					<!--syslog-->
+					<div role="tabpanel" class="tab-pane fade" id="syslog" aria-labelledBy="syslog-tab">
+						<form class="form-inline text-center p10 ie-syslog">		
+							<select class="form-control mr10">
+								<option value="选择日志级别">选择日志级别</option>
+								<option value="严重">严重</option>
+								<option value="主要">主要</option>
+								<option value="警告">警告</option>
+							</select>
+							<button class="btn btn-default mr10" type="submit"><i class="fa fa-search"></i> 搜索</button>
+						</form>
+						<div class="p10">
+							<table class="table table-bordered table-striped" data-toggle="table" data-mobile-responsive="true" data-pagination="true" data-page-size="10">
+								<thead>
+									<tr>
+										<th>级别</th>
+										<th>内容</th>
+										<th data-sortable="true">发生时间</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>严重</td>
+										<td>The chassis is open while the power is off.</td>
+										<td>2016-5-6 11:45:28</td>
+									</tr>
+									<tr>
+										<td>主要</td>
+										<td>CPU 1 machine check error detected.</td>
+										<td>2016-5-6 11:45:28</td>
+									</tr> 
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!--syslog END-->
+					
+					<!--SnmpTrap-->
+					<div role="tabpanel" class="tab-pane fade" id="snmpTrap" aria-labelledBy="snmpTrap-tab">
+						<form class="form-inline text-center p10 ie-snmpTrap">		
+							<select class="form-control mr10">
+								<option value="选择日志级别">选择日志级别</option>
+								<option value="严重">严重</option>
+								<option value="主要">主要</option>
+								<option value="警告">警告</option>
+							</select>
+							<button class="btn btn-default mr10" type="submit"><i class="fa fa-search"></i> 搜索</button>
+						</form>
+						<div class="p10">
+							<table class="table table-bordered table-striped" data-toggle="table" data-mobile-responsive="true" data-pagination="true" data-page-size="10">
+								<thead>
+									<tr>
+										<th>级别</th>
+										<th>内容</th>
+										<th data-sortable="true">发生时间</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>严重</td>
+										<td>The chassis is open while the power is off.</td>
+										<td>2016-5-6 11:45:28</td>
+									</tr>
+									<tr>
+										<td>主要</td>
+										<td>CPU 1 machine check error detected.</td>
+										<td>2016-5-6 11:45:28</td>
+									</tr>
+									<tr>
+										<td>主要</td>
+										<td>CPU 1 machine check error detected.</td>
+										<td>2016-5-6 11:45:28</td>
+									</tr>									
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!--SnmpTrap END-->
+					
+				</div>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+
+ 
+
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="plugins/jQueryUI/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+<!-- BootstrapTable -->
+<link rel="stylesheet" href="plugins/BootstrapTable/bootstrap-table.min.css">
+<script src="plugins/BootstrapTable/bootstrap-table.min.js"></script>
+<script src="plugins/BootstrapTable/bootstrap-table-zh-CN.min.js"></script>
+
+<link rel="stylesheet" href="plugins/timepicker/bootstrap-datetimepicker.min.css"><!--日期和时间表单组件，样式-->
+<script type="text/javascript" src="plugins/timepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script><!--日期和时间表单组件-->
+<script type="text/javascript" src="plugins/timepicker/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script><!--日期和时间表单组件-->
+</body>
+</html>

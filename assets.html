@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 -- 设备资产</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li class="active"><a href="assets.html">我的资产</a></li>
+		<li><a href="monitor.html">我的监测</a></li>
+		<li><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="assets.html" class="active">设备资产</a>
+	<a href="assets_business.html">业务资产</a>
+	<a href="assets_engineroom.html">机房机架</a>
+	<a href="assets_responsible.html">责任人管理</a>
+	<a href="assets_agents.html">代理商信息</a>
+</div>
+
+<aside class="main-sidebar">
+	<section class="sidebar">
+		<ul class="sidebar-menu">
+			<li class="active treeview">
+				<a href="#">
+				<i class="fa fa-th"></i> <span>按设备类别查看</span> <i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					<li class="active"><a href="#"><i class="fa fa-server"></i> 服务器</a></li>
+					<li><a href="#"><i class="fa fa-database"></i> 存储设备</a></li>
+					<li><a href="#"><i class="fa fa-wifi"></i> 网络设备</a></li>
+					<li><a href="#"><i class="fa fa-plug"></i> 电源设备</a></li>
+					<li><a href="#"><i class="fa fa-yelp"></i> 机房空调</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-delicious"></i> <span>按受控状态分类</span> <i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="#"><i class="fa fa-sitemap"></i> 已受控</a></li>
+					<li><a href="#"><i class="fa fa-unlink"></i> 未受控</a></li>
+					<li><a href="#"><i class="fa fa-long-arrow-down"></i> 已下线</a></li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+	<a role="button" data-toggle="offcanvas" class="sidebar-toggle" href="javascript:void(0)"></a>
+</aside>
+ 
+<div class="content-wrapper">
+	<div class="container-fluid">
+		<!--位置组件-->
+		<ol class="breadcrumb">
+			<li><i class="fa fa-dashboard"></i> <a href="assets.html">资产管理</a></li>
+			<li><a href="#">设备资产</a></li>
+			<li class="active">所有服务器</li>
+		</ol>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-header with-border">
+						<!--搜索区-->
+						<form class="form-inline text-muted p10 ie-header2">
+							<div class="form-group mr10">
+								<label for="SearchDevices">搜索设备：</label>
+								<input type="text" class="form-control" id="SearchDevices" placeholder="请输入名称">
+							</div>
+							<div class="form-group mr10">
+								<label for="DetectionStatus">监测状态：</label>
+								<select id="DetectionStatus" class="form-control">
+									<option>全部</option>
+									<option>已受控</option>
+									<option>未受控</option>
+									<option>已下线</option>
+								</select>
+							</div>
+							<div class="form-group mr10">
+								<label for="Firm">厂商：</label>
+								<select id="Firm" class="form-control">
+									<option>全部</option>
+									<option>其它</option>
+								</select>
+							</div>
+							<div class="form-group mr10">
+								<label for="Responsible">责任人：</label>
+								<select id="Responsible" class="form-control">
+									<option>全部</option>
+									<option>小张</option>
+									<option>小王</option>
+								</select>
+							</div>
+							<button type="submit" class="btn btn-default"><i class="fa fa-search"></i> 搜索</button>
+						</form>
+						<!--搜索区END-->
+					</div>
+					<div class="box-body">
+						<p>
+							<a class="btn btn-info mr10" href="assets_info.html"><i class="glyphicon glyphicon-plus"></i> 新增设备</a>
+							<a class="btn btn-default mr10" href="#"><i class="glyphicon glyphicon-share-alt"></i> 导出</a>
+							<a class="btn btn-default mr10" href="#"><i class="glyphicon glyphicon-save"></i> 批量下载</a>
+						</p>
+						
+						
+						<table id="table" class="table table-bordered table-striped"
+						data-toggle="table"
+						data-mobile-responsive="true"		
+						data-striped = "true"
+						data-pagination="true"
+						data-page-size="10"> <!-- 这里可设置表格高度 -->
+							<thead>
+								<tr>
+									<th data-field="state" data-checkbox="true"></th>
+									<th>监测状态</th>
+									<th data-sortable="true">带外IP</th>
+									<th>设备名称</th>
+									<th>关联业务</th>
+									<th>所在位置</th>
+									<th>厂商</th>
+									<th>型号</th>
+									<th>代理商</th>
+									<th>责任人</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td><i class="fa fa-times-circle text-red"></i> <span class="text-red">紧急</span></td>
+									<td>192.138.100.28</td>
+									<td><a href="assets_info.html">生产数据库服务器</a></td>
+									<td>邮件系统,OA</td>
+									<td>数控机房,B12机框</td>
+									<td>HP</td>
+									<td>Proliant DL580</td>
+									<td>广州运维通</td>
+									<td>李科</td>
+									<td>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="编辑" class="btn btn-info btn-xs" href="assets_info.html"><i class="fa fa-edit"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="暂停监测" class="btn btn-danger btn-xs" href="#"><i class="fa fa-pause"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="下线" class="btn btn-warning btn-xs" href="#"><i class="fa fa-arrow-circle-down"></i></a>
+									 </td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td><i class="fa fa-exclamation-circle text-light-blue"></i> <span class="text-light-blue">主要</span></td>
+									<td>192.178.100.28</td>
+									<td><a href="assets_info.html">生产数据库服务器</a></td>
+									<td>邮件系统,OA</td>
+									<td>数控机房,B12机框</td>
+									<td>HP</td>
+									<td>Proliant DL580</td>
+									<td>广州运维通</td>
+									<td>李科</td>
+									<td>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="编辑" class="btn btn-info btn-xs" href="assets_info.html"><i class="fa fa-edit"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="启动监测" class="btn btn-success btn-xs" href="#"><i class="fa fa-play"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="下线" class="btn btn-warning btn-xs" href="#"><i class="fa fa-arrow-circle-down"></i></a>
+									 </td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td> <i class="fa fa-minus-circle text-yellow"></i> <span class="text-yellow">告警</span> </td>
+									<td>192.198.100.28</td>
+									<td><a href="assets_info.html">生产数据库服务器</a></td>
+									<td>邮件系统,OA</td>
+									<td>数控机房,B12机框</td>
+									<td>HP</td>
+									<td>Proliant DL580</td>
+									<td>广州运维通</td>
+									<td>李科</td>
+									<td>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="编辑" class="btn btn-info btn-xs" href="assets_info.html"><i class="fa fa-edit"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="创建监测" class="btn btn-primary btn-xs" href="monitor_create_txt.html"><i class="fa fa-plus"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="下线" class="btn btn-warning btn-xs" href="#"><i class="fa fa-arrow-circle-down"></i></a>
+									 </td>
+								</tr>
+								
+								<tr>
+									<td><input type="checkbox"></td>
+									<td><i class="fa fa-exclamation-circle text-light-blue"></i> <span class="text-light-blue">主要</span></td>
+									<td>192.178.100.28</td>
+									<td><a href="assets_info.html">生产数据库服务器</a></td>
+									<td>邮件系统,OA</td>
+									<td>数控机房,B12机框</td>
+									<td>HP</td>
+									<td>Proliant DL580</td>
+									<td>广州运维通</td>
+									<td>李科</td>
+									<td>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="编辑" class="btn btn-info btn-xs" href="assets_info.html"><i class="fa fa-edit"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="启动监测" class="btn btn-success btn-xs" href="#"><i class="fa fa-play"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="下线" class="btn btn-warning btn-xs" href="#"><i class="fa fa-arrow-circle-down"></i></a>
+									 </td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td> <i class="fa fa-minus-circle text-yellow"></i> <span class="text-yellow">告警</span> </td>
+									<td>192.198.100.28</td>
+									<td><a href="assets_info.html">生产数据库服务器</a></td>
+									<td>邮件系统,OA</td>
+									<td>数控机房,B12机框</td>
+									<td>HP</td>
+									<td>Proliant DL580</td>
+									<td>广州运维通</td>
+									<td>李科</td>
+									<td>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="编辑" class="btn btn-info btn-xs" href="assets_info.html"><i class="fa fa-edit"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="创建监测" class="btn btn-primary btn-xs" href="monitor_create_txt.html"><i class="fa fa-plus"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="下线" class="btn btn-warning btn-xs" href="#"><i class="fa fa-arrow-circle-down"></i></a>
+									 </td>
+								</tr>
+								
+								<tr>
+									<td><input type="checkbox"></td>
+									<td><i class="fa fa-exclamation-circle text-light-blue"></i> <span class="text-light-blue">主要</span></td>
+									<td>192.178.100.28</td>
+									<td><a href="assets_info.html">生产数据库服务器</a></td>
+									<td>邮件系统,OA</td>
+									<td>数控机房,B12机框</td>
+									<td>HP</td>
+									<td>Proliant DL580</td>
+									<td>广州运维通</td>
+									<td>李科</td>
+									<td>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="编辑" class="btn btn-info btn-xs" href="assets_info.html"><i class="fa fa-edit"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="启动监测" class="btn btn-success btn-xs" href="#"><i class="fa fa-play"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="下线" class="btn btn-warning btn-xs" href="#"><i class="fa fa-arrow-circle-down"></i></a>
+									 </td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td> <i class="fa fa-minus-circle text-yellow"></i> <span class="text-yellow">告警</span> </td>
+									<td>192.198.100.28</td>
+									<td><a href="assets_info.html">生产数据库服务器</a></td>
+									<td>邮件系统,OA</td>
+									<td>数控机房,B12机框</td>
+									<td>HP</td>
+									<td>Proliant DL580</td>
+									<td>广州运维通</td>
+									<td>李科</td>
+									<td>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="编辑" class="btn btn-info btn-xs" href="assets_info.html"><i class="fa fa-edit"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="创建监测" class="btn btn-primary btn-xs" href="monitor_create_txt.html"><i class="fa fa-plus"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="下线" class="btn btn-warning btn-xs" href="#"><i class="fa fa-arrow-circle-down"></i></a>
+									 </td>
+								</tr>
+								
+								<tr>
+									<td><input type="checkbox"></td>
+									<td><i class="fa fa-exclamation-circle text-light-blue"></i> <span class="text-light-blue">主要</span></td>
+									<td>192.178.100.28</td>
+									<td><a href="assets_info.html">生产数据库服务器</a></td>
+									<td>邮件系统,OA</td>
+									<td>数控机房,B12机框</td>
+									<td>HP</td>
+									<td>Proliant DL580</td>
+									<td>广州运维通</td>
+									<td>李科</td>
+									<td>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="编辑" class="btn btn-info btn-xs" href="assets_info.html"><i class="fa fa-edit"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="启动监测" class="btn btn-success btn-xs" href="#"><i class="fa fa-play"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="下线" class="btn btn-warning btn-xs" href="#"><i class="fa fa-arrow-circle-down"></i></a>
+									 </td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td> <i class="fa fa-minus-circle text-yellow"></i> <span class="text-yellow">告警</span> </td>
+									<td>192.198.100.28</td>
+									<td><a href="assets_info.html">生产数据库服务器</a></td>
+									<td>邮件系统,OA</td>
+									<td>数控机房,B12机框</td>
+									<td>HP</td>
+									<td>Proliant DL580</td>
+									<td>广州运维通</td>
+									<td>李科</td>
+									<td>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="编辑" class="btn btn-info btn-xs" href="assets_info.html"><i class="fa fa-edit"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="创建监测" class="btn btn-primary btn-xs" href="monitor_create_txt.html"><i class="fa fa-plus"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="下线" class="btn btn-warning btn-xs" href="#"><i class="fa fa-arrow-circle-down"></i></a>
+									 </td>
+								</tr>
+								
+								<tr>
+									<td><input type="checkbox"></td>
+									<td><i class="fa fa-exclamation-circle text-light-blue"></i> <span class="text-light-blue">主要</span></td>
+									<td>192.178.100.28</td>
+									<td><a href="assets_info.html">生产数据库服务器</a></td>
+									<td>邮件系统,OA</td>
+									<td>数控机房,B12机框</td>
+									<td>HP</td>
+									<td>Proliant DL580</td>
+									<td>广州运维通</td>
+									<td>李科</td>
+									<td>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="编辑" class="btn btn-info btn-xs" href="assets_info.html"><i class="fa fa-edit"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="启动监测" class="btn btn-success btn-xs" href="#"><i class="fa fa-play"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="下线" class="btn btn-warning btn-xs" href="#"><i class="fa fa-arrow-circle-down"></i></a>
+									 </td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td> <i class="fa fa-minus-circle text-yellow"></i> <span class="text-yellow">告警</span> </td>
+									<td>192.198.100.28</td>
+									<td><a href="assets_info.html">生产数据库服务器</a></td>
+									<td>邮件系统,OA</td>
+									<td>数控机房,B12机框</td>
+									<td>HP</td>
+									<td>Proliant DL580</td>
+									<td>广州运维通</td>
+									<td>李科</td>
+									<td>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="编辑" class="btn btn-info btn-xs" href="assets_info.html"><i class="fa fa-edit"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="创建监测" class="btn btn-primary btn-xs" href="monitor_create_txt.html"><i class="fa fa-plus"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="下线" class="btn btn-warning btn-xs" href="#"><i class="fa fa-arrow-circle-down"></i></a>
+									 </td>
+								</tr>
+								
+								<tr>
+									<td><input type="checkbox"></td>
+									<td><i class="fa fa-exclamation-circle text-light-blue"></i> <span class="text-light-blue">主要</span></td>
+									<td>192.178.100.28</td>
+									<td><a href="assets_info.html">生产数据库服务器</a></td>
+									<td>邮件系统,OA</td>
+									<td>数控机房,B12机框</td>
+									<td>HP</td>
+									<td>Proliant DL580</td>
+									<td>广州运维通</td>
+									<td>李科</td>
+									<td>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="编辑" class="btn btn-info btn-xs" href="assets_info.html"><i class="fa fa-edit"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="启动监测" class="btn btn-success btn-xs" href="#"><i class="fa fa-play"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="下线" class="btn btn-warning btn-xs" href="#"><i class="fa fa-arrow-circle-down"></i></a>
+									 </td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td> <i class="fa fa-minus-circle text-yellow"></i> <span class="text-yellow">告警</span> </td>
+									<td>192.198.100.28</td>
+									<td><a href="assets_info.html">生产数据库服务器</a></td>
+									<td>邮件系统,OA</td>
+									<td>数控机房,B12机框</td>
+									<td>HP</td>
+									<td>Proliant DL580</td>
+									<td>广州运维通</td>
+									<td>李科</td>
+									<td>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="编辑" class="btn btn-info btn-xs" href="assets_info.html"><i class="fa fa-edit"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="创建监测" class="btn btn-primary btn-xs" href="monitor_create_txt.html"><i class="fa fa-plus"></i></a>
+										<a data-placement="top" data-toggle="tooltip" data-original-title="下线" class="btn btn-warning btn-xs" href="#"><i class="fa fa-arrow-circle-down"></i></a>
+									 </td>
+								</tr>
+							</tbody>
+						</table>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+</div>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="plugins/jQueryUI/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+<!-- BootstrapTable -->
+<link rel="stylesheet" href="plugins/BootstrapTable/bootstrap-table.min.css">
+<script src="plugins/BootstrapTable/bootstrap-table.min.js"></script>
+<script src="plugins/BootstrapTable/bootstrap-table-zh-CN.min.js"></script> <!--语言包放在bootstrap-table.min.js 之后-->
+</body>
+</html>

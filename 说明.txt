@@ -1,0 +1,22 @@
+A：请在有网络环境查看。
+
+
+B：bootstrap.min.css及兼容IE9-浏览器 的文件都引用了CDN加速地址
+
+
+C：后续如果不需要引用CDN加速地址，务必把fonts文件夹与bootstrap的文件和html5shiv.min.js/respond.js同域。
+fonts要与css文件在同一根目录下，且不能跨域，因为Firefox和IE9不支持对icon font字体的跨域访问”，需要在图标字体文件所在服务器配置Header参数“Access-Control-Allow-Origin”允许当前域名才可以。
+
+
+D：如果 Respond.js 和 CSS 文件被放在不同的域名或子域名下面（例如，使用CDN）时需要一些额外的设置。请参考 Respond.js 文档 获取详细信息。
+
+
+E: icons.html文件是所有小图片的引用名；  <i class="fa 粘贴小图标名称"></i>
+
+F：buttons.html是按钮类用法的页面
+
+G：主要用的框架http://v3.bootcss.com/css/ 
+
+
+http://www.bootcdn.cn/   CDN加速
+

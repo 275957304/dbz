@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 -- 离线计划管理</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li><a href="assets.html">我的资产</a></li>
+		<li class="active"><a href="monitor.html">我的监测</a></li>
+		<li><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="monitor.html">当前告警</a>
+	<a href="monitor_equipment.html">设备监测</a>
+	<a href="monitor_engine.html">机房监测</a>
+	<a class="active" href="monitor_offline.html">离线计划管理</a>
+	<a href="monitor_history.html">历史告警</a>
+</div>
+
+ 
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="monitor.html">监测管理</a></li>
+		<li><a href="monitor_offline.html">离线计划管理</a></li>
+		<li class="active">创建计划</li>
+	</ol>
+	
+	<div class="box">
+		<div class="box-header with-border">
+			<i class="fa fa-clipboard"></i>
+			创建计划离线计划
+		</div>
+		<div class="box-body">
+			<div class="assets-box p10 no-margin">
+				<form class="form-horizontal">
+					<div class="panel panel-default no-shadow">
+						<div class="panel-heading">第一步：离线计划基本信息</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label for="onlineName" class="col-sm-3 control-label"><span class="text-danger">*</span> 离线计划名称</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" id="onlineName" placeholder="请填离线计划名称">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="creatName" class="col-sm-3 control-label">创建人</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" disabled="" value="李明">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="details" class="col-sm-3 control-label">描 述</label>
+								<div class="col-sm-5">
+									<textarea id="details" class="form-control" rows="2"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default no-shadow">
+						<div class="panel-heading">第二步：离线触发器</div>
+						<div class="panel-body">
+					
+							<div class="form-group">
+								<label class="col-sm-3 control-label">希望该计划何时开始</label>
+								<div class="col-sm-8">
+															
+									<ul class="nav select-time clearfix"> 
+										<li role="presentation" class="active"><a href="#days" id="days-tab" role="tab" data-toggle="tab" aria-controls="days" aria-expanded="true">每天</a></li>
+										<li role="presentation"><a href="#week" id="week-tab" role="tab" data-toggle="tab" aria-controls="week" aria-expanded="true">每周</a></li>
+										<li role="presentation"><a href="#month" id="month-tab" role="tab" data-toggle="tab" aria-controls="month" aria-expanded="true">每月</a></li>
+										<li role="presentation"><a href="#one" id="one-tab" role="tab" data-toggle="tab" aria-controls="one" aria-expanded="true">一次性</a></li>
+									</ul>
+									<div class="tab-content select-time-box" id="myTabContent">	
+										<!-- 每天 -->
+										<div role="tabpanel" class="tab-pane fade in active" id="days" aria-labelledBy="days-tab">
+											<div class="form-inline">
+												<input type="text"  value="" placeholder="开始时间" class="form-control selecTime"> <!-- selecTime这个是控制时间的 如果要精确到小时 selecTime-hh  -->
+												<div class="checkbox text-muted">至</div>
+												<input type="text" value="" placeholder="停止时间" class="form-control mr10 selecTime">   <!-- 把selecTime改为selecTime-hh 这个表示精确到小时-->
+												<div class="checkbox text-muted">每隔：</div><input style="width:50px;" type="text" value="" placeholder="天" class="form-control"> <div class="checkbox text-muted">天发生一次</div>
+											</div>
+										</div><!-- 每天END -->
+										
+										<!-- 每周 -->
+										<div role="tabpanel" class="tab-pane fade" id="week" aria-labelledBy="week-tab">
+											<div class="form-inline">
+												<input type="text" value="" placeholder="开始时间" class="form-control selecTime"> <!-- selecTime这个是控制时间的 如果要精确到小时 selecTime-hh  -->
+												<div class="checkbox text-muted">至</div>
+												<input type="text" value="" placeholder="停止时间" class="form-control mr10 selecTime"> <!-- selecTime这个是控制时间的 如果要精确到小时 selecTime-hh  -->
+												<div class="checkbox text-muted">每隔：</div><input style="width:50px;" type="text" value="" placeholder="天" class="form-control"> <div class="checkbox text-muted">天发生一次</div>
+											</div>
+											<div class="p5">
+												<label class="checkbox-inline mr10">
+													<input type="checkbox" id="inlineCheckbox1" value="option1"> 周一
+												</label>
+												<label class="checkbox-inline mr10">
+													<input type="checkbox" id="inlineCheckbox2" value="option2"> 周二
+												</label>
+												<label class="checkbox-inline mr10">
+													<input type="checkbox" id="inlineCheckbox3" value="option3"> 周三
+												</label>
+												<label class="checkbox-inline mr10">
+													<input type="checkbox" id="inlineCheckbox4" value="option4"> 周四
+												</label>
+												<label class="checkbox-inline mr10">
+													<input type="checkbox" id="inlineCheckbox5" value="option5"> 周五
+												</label>
+												<label class="checkbox-inline mr10">
+													<input type="checkbox" id="inlineCheckbox6" value="option6"> 周六
+												</label>
+												<label class="checkbox-inline mr10">
+													<input type="checkbox" id="inlineCheckbox7" value="option7"> 周日
+												</label>
+											</div>
+										</div><!-- 每周END -->
+										
+										<!-- 每月 -->
+										<div role="tabpanel" class="tab-pane fade" id="month" aria-labelledBy="month-tab">
+											<div class="form-inline">
+												<div class="checkbox text-muted">选择月份：</div>
+												<select class="form-control">
+													<option value="选择所有的月份">选择所有的月份</option>
+													<option value="1月">1月</option>
+													<option value="2月">2月</option>
+													<option value="3月">3月</option>
+													<option value="4月">4月</option>
+													<option value="5月">5月</option>
+													<option value="6月">6月</option>
+													<option value="7月">7月</option>
+													<option value="8月">8月</option>
+													<option value="9月">9月</option>
+													<option value="10月">10月</option>
+													<option value="11月">11月</option>
+													<option value="12月">12月</option>
+												</select> 
+											</div>
+											
+											<div class="form-inline p10">
+		 
+												<label class="radio-inline mr10">
+												<input type="radio" name="inlineRadioOptions" id="days" value="day"> 天
+												</label>
+												
+												<input type="text" placeholder="Password" class="form-control">
+												<a href="javascript:void(0)" data-toggle="modal" data-target="#seletDadys" class="btn btn-default mr10">选择日期</a>
+												
+ 												<!-- 选择日期弹出框 -->
+													<div class="modal fade" id="seletDadys" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+														<div class="modal-dialog modal-sm">
+															<div class="modal-content">
+																<div class="modal-header">
+																	选择日期
+																	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+																</div>
+																<div class="modal-body">
+																	 
+																	<label class="checkbox-inline ml10">
+																		<input type="checkbox" id="sele1" value="option1"> 1
+																	</label>
+																	<label class="checkbox-inline">
+																		<input type="checkbox" id="sele2" value="option2"> 2
+																	</label>
+																	<label class="checkbox-inline">
+																		<input type="checkbox" id="sele3" value="option3"> 3
+																	</label>
+																	<label class="checkbox-inline">
+																		<input type="checkbox" id="sele4" value="option4"> 4
+																	</label>
+																	<label class="checkbox-inline">
+																		<input type="checkbox" id="sele5" value="option5"> 5
+																	</label>
+																	<label class="checkbox-inline">
+																		<input type="checkbox" id="sele6" value="option6"> 6
+																	</label>
+																	<label class="checkbox-inline">
+																		<input type="checkbox" id="sele7" value="option7"> 7
+																	</label>
+																	<label class="checkbox-inline">
+																		<input type="checkbox" id="sele8" value="option3"> 8
+																	</label>
+																	<label class="checkbox-inline">
+																		<input type="checkbox" id="sele9" value="option9"> 9
+																	</label>
+																	
+																	<div class="mt10 p10 text-center">
+																		<a href="javascript:void(0)" class="btn btn-success mr10">保 存</a>
+																		<a data-dismiss="modal" aria-label="Close" type="button" class="btn btn-default">取 消</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>  
+												<!-- 选择日期弹出框END -->
+					 
+										 
+												<label class="radio-inline mr10">
+													<input type="radio" name="z"> 在
+												</label>
+												<select class="form-control mr10">
+													<option value="第一个">第一个</option>
+													<option value="第二个">第二个</option>
+													<option value="第三个">第三个</option>
+													<option value="第四个">第四个</option>
+													<option value="最后一个">最后一个</option>
+												</select>
+												<select class="form-control">
+													<option value="选择所有">选择所有</option>
+													<option value="周日">周日</option>
+													<option value="周一">周一</option>
+													<option value="周二">周二</option>
+													<option value="周三">周三</option>
+													<option value="周四">周四</option>
+													<option value="周五">周五</option>
+													<option value="周六">周六</option>
+												</select>
+											</div>
+										</div><!-- 每月END -->
+										
+										<!-- 一次性 -->
+										<div role="tabpanel" class="tab-pane fade" id="one" aria-labelledBy="one-tab">
+											<div class="form-inline">
+												<div class="checkbox text-muted">开始</div>
+												<input type="text" class="form-control selecTime" placeholder="开始时间" value=""> <!-- selecTime这个是控制时间的 如果要精确到小时 selecTime-hh  -->
+												<div class="checkbox text-muted">至</div>
+												<input type="text" class="form-control mr10 selecTime" placeholder="停止时间" value="">
+											</div>
+										</div>
+										<!-- 一次性END -->
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">希望执行的级别</label>
+								<div class="col-sm-4">							
+									<select class="form-control">
+										<option value="忽略告警">忽略告警</option>
+										<option value="禁止监测">禁止监测</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="panel panel-default no-shadow">
+						<div class="panel-heading">第三步：添加离线计划设备</div>
+						<div class="panel-body">	
+							<div class="mb10">
+								<button type="button" class="btn btn-info btn-sm mr10" data-toggle="modal" data-target="#addAssets"><i class="fa fa-plus"></i> 添加设备</button>
+								<a class="btn btn-default btn-sm" href="#"><i class="fa fa-close"></i> 删除设备</a>
+							</div>
+							<table class="table table-bordered table-striped" data-toggle="table" data-mobile-responsive="true" data-pagination="true" data-page-size="5">
+								<thead>
+									<tr>
+										<th data-field="state" data-checkbox="true"></th>
+										<th>带外IP</th>
+										<th>设备名称</th>
+										<th>所在位置</th>
+										<th>责任人</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input type="checkbox"></td>
+										<td>192.168.100.28</td>
+										<td>生产数据库服务器1</td>
+										<td>上海青峰机房，机柜T3，4U</td>
+										<td>李明</td>
+										<td><a class="btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top" href="#"><i class="fa fa-close"></i></a></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"></td>
+										<td>192.168.100.28</td>
+										<td>生产数据库服务器1</td>
+										<td>上海青峰机房，机柜T3，4U</td>
+										<td>李明</td>
+										<td><a class="btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top" href="#"><i class="fa fa-close"></i></a></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"></td>
+										<td>192.168.100.28</td>
+										<td>生产数据库服务器1</td>
+										<td>上海青峰机房，机柜T3，4U</td>
+										<td>李明</td>
+										<td><a class="btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top" href="#"><i class="fa fa-close"></i></a></td>
+									</tr>
+								</tbody>
+							</table>
+					
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-offset-4 col-sm-5">
+							<button class="btn btn-success mr10" type="button"> 提交计划 </button>
+							<a class="btn btn-default mr10" href="monitor_offline.html"> 取消计划 </a>
+						</div>
+					</div>
+					
+				</form>
+				<br/>
+			</div>	
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- 添加设置 弹出框 -->
+<div class="modal fade" id="addAssets" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				添加设置
+			</div>
+			<div class="modal-body">
+				<div class="form-inline">
+					你选择的是: <input type="text"  disabled="" class="form-control jstree-selec">
+					<!--树状菜单-->
+					<div id="jstree" >
+						<ul>
+							<li>资源视图
+								<ul>
+									<li data-jstree='{"selected" : true }'>存储</li>
+									<li>安全设备</li>
+									<li>操作系统
+										<ul>
+											<li>操作系统1</li>
+											<li>操作系统2</li>
+											<li>操作系统3</li>
+										</ul>
+									</li>
+									<li>服务器硬件</li>
+								</ul>
+							</li>
+							<li><a href="javascript:void(0)">存储</a></li>
+							<li>网络设备</li>
+							<li>虚拟化平台</li>
+							<li>通用</li>
+							<li>上证通机房</li>
+						</ul>
+					</div>
+					<!--树状菜单 END-->
+				</div>
+				<div class="mb10 text-center">
+					<button class="btn btn-success mr10" type="button">确认</button>
+					<button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+  
+
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+
+ <!-- BootstrapTable -->
+<link rel="stylesheet" href="plugins/BootstrapTable/bootstrap-table.min.css">
+<script src="plugins/BootstrapTable/bootstrap-table.min.js"></script>
+<script src="plugins/BootstrapTable/bootstrap-table-zh-CN.min.js"></script>
+
+<link rel="stylesheet" href="plugins/timepicker/bootstrap-datetimepicker.min.css"><!--日期和时间表单组件，样式-->
+<script type="text/javascript" src="plugins/timepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script><!--日期和时间表单组件-->
+<script type="text/javascript" src="plugins/timepicker/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script><!--日期和时间表单组件-->
+
+<link rel="stylesheet" href="plugins/jstree/style.min.css"><!--树状菜单 样式-->
+<script src="plugins/jstree/jstree.min.js"></script><!--树状菜单-->
+
+<script type="text/javascript">
+	$(function(){
+		//弹出框 树状菜单
+		$('#jstree').jstree();
+		
+		//多选
+		/*
+		$("#jstree").jstree({
+			"checkbox" : {
+			"keep_selected_style" : false
+			},
+			"plugins" : [ "checkbox" ]
+		});
+		*/
+		
+		//输出选择的元素
+		$('#jstree').on('changed.jstree', function (e, data) {
+			var i, j, r = [];
+			for(i = 0, j = data.selected.length; i < j; i++) {
+				r.push(data.instance.get_node(data.selected[i]).text);
+			}
+			$('.jstree-selec').val(r.join(', '));
+		}).jstree();
+	});	
+</script>
+ 
+</body>
+</html>

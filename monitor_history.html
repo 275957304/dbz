@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 -- 历史告警</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li><a href="assets.html">我的资产</a></li>
+		<li class="active"><a href="monitor.html">我的监测</a></li>
+		<li><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="monitor.html">当前告警</a>
+	<a href="monitor_equipment.html">设备监测</a>
+	<a href="monitor_engine.html">机房监测</a>
+	<a href="monitor_offline.html">离线计划管理</a>
+	<a class="active" href="monitor_history.html">历史告警</a>
+</div>
+
+ 
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="monitor.html">监测管理</a></li>
+		<li class="active">历史告警</li>
+	</ol>
+	
+	<div class="box">
+		<div class="box-header with-border">
+			<form class="form-warning p10 ie-header3">
+				<!--显示选择导航-->
+				<dl id="selectResult" class="select-result">
+					<dt>已选分类：</dt>
+					<dd class="select-no">暂时没有选择分类条件</dd>			
+				</dl>
+				<!--显示选择导航END-->
+				<div class="row">
+					<div class="col-xs-4">
+						<input type="text" class="form-control col-sm-6 ie-w100" placeholder="请输入设备名称/IP/部件名称">
+					</div>
+					<div class="col-xs-3">
+						<button type="submit" class="btn btn-default mr10"><i class="fa fa-search"></i> 搜索</button> 
+						<div class="open-div">
+							<a class="text-primary collapsed" data-toggle="collapse" data-target="#searchMore" aria-expanded="false" aria-controls="searchMore" href="javascript:;">
+								<span class="more">更多查询条件 <i class="fa fa-chevron-circle-down"></i></span><span class="simple">精简查询条件 <i class="fa fa-chevron-circle-up"></i></span>	
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="form-inline collapse mt10" id="searchMore">
+					<div  id="selectNum" class="clearfix">
+						<select class="form-control mr10">
+							<option value="告警状态">请选择告警状态</option>
+							<option value="所有">所有</option>
+							<option value="未确认">未确认</option>
+							<option value="已确认">已确认</option>
+						</select>
+
+						<select class="form-control mr10">
+							<option value="报修状态">请选择报修状态</option>
+							<option value="所有">所有</option>
+							<option value="已报修">已报修</option>
+							<option value="未报修">未报修</option>
+						</select>
+						
+						<select class="form-control mr10 ie-jg">
+							<option value="告警级别">选择告警级别</option>
+							<option value="严重">严重</option>
+							<option value="主要">主要</option>
+							<option value="一般">一般</option>
+							<option value="告警">告警</option>
+						</select>
+						
+						<select class="form-control">
+							<option value="责任人">选择责任人</option>
+							<option value="所有">所有</option>
+							<option value="李明">李明</option>
+							<option value="李科">李科</option>
+							<option value="大力">大力</option>
+						</select>
+					</div>
+					<div class="clearfix mt10">
+						<div style="width:62px" class="checkbox text-right"> IP: </div>
+						<input type="text" class="form-control mr10" placeholder="IP地址">
+						<div class="checkbox mr10">部件:</div> 
+						<input type="text" class="form-control" placeholder="部件名称">	
+					</div>
+					<div class="clearfix mt10">
+						<div class="checkbox">发生时间:</div>
+						<input type="text" class="form-control selecTime" placeholder="开始时间"> <!-- selecTime这个是控制时间的 如果要精确到小时 selecTime-hh  -->
+						<div class="checkbox ie-to">至</div>
+						<input type="text" class="form-control selecTime" placeholder="结束时间">  <!-- selecTime-hh 这个表示精确到小时-->
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="box-body">
+			<div class="p10">
+				<p>
+					<a href="#" class="btn btn-default mr10"><i class="fa fa-mail-forward"></i> 导出告警</a>
+				</p>
+				<table class="table table-bordered table-striped" data-toggle="table" data-mobile-responsive="true" data-pagination="true" data-page-size="10">
+					<thead>
+						<tr>
+							<th>告警ID</th>
+							<th data-sortable="true">告警级别</th>
+							<th>IP</th>
+							<th>设备名称</th>
+							<th>部件</th>
+							<th>告警信息</th>
+							<th data-sortable="true">发生时间</th>
+							<th>发生次数</th>
+							<th>关闭方式</th>
+							<th>处理人员</th>
+							<th data-sortable="true">关闭时间</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>2721</td>
+							<td>紧急</td>
+							<td>172.18.10.40</td>
+							<td>生产数据库服务器1</td>
+							<td>CPU1</td>
+							<td>Load Average:LoadAverage</td>
+							<td>2015-11-12 16:45:26</td>
+							<td>11</td>
+							<td>手动关闭</td>
+							<td>张三</td>
+							<td>2015-12-8 17:45:26</td>
+						</tr>
+						<tr>
+							<td>2721</td>
+							<td>紧急</td>
+							<td>172.18.10.40</td>
+							<td>生产数据库服务器1</td>
+							<td>CPU1</td>
+							<td>Load Average:LoadAverage</td>
+							<td>2012-11-12 16:45:26</td>
+							<td>11</td>
+							<td>故障排除</td>
+							<td>张三</td>
+							<td>2015-11-11 17:45:26</td>
+						</tr>
+						<tr>
+							<td>2721</td>
+							<td>紧急</td>
+							<td>172.18.10.40</td>
+							<td>生产数据库服务器1</td>
+							<td>CPU1</td>
+							<td>Load Average:LoadAverage</td>
+							<td>2013-11-12 16:45:26</td>
+							<td>11</td>
+							<td>手动关闭</td>
+							<td>张三</td>
+							<td>2013-11-11 17:45:26</td>
+						</tr>
+						<tr>
+							<td>2721</td>
+							<td>紧急</td>
+							<td>172.18.10.40</td>
+							<td>生产数据库服务器1</td>
+							<td>CPU1</td>
+							<td>Load Average:LoadAverage</td>
+							<td>2013-11-12 16:45:26</td>
+							<td>11</td>
+							<td>手动关闭</td>
+							<td>张三</td>
+							<td>2010-11-11 17:45:26</td>
+						</tr>
+						<tr>
+							<td>2721</td>
+							<td>紧急</td>
+							<td>172.18.10.40</td>
+							<td>生产数据库服务器1</td>
+							<td>CPU1</td>
+							<td>Load Average:LoadAverage</td>
+							<td>2010-10-12 16:45:26</td>
+							<td>11</td>
+							<td>手动关闭</td>
+							<td>张三</td>
+							<td>2013-11-11 17:45:26</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+<!-- BootstrapTable -->
+<link rel="stylesheet" href="plugins/BootstrapTable/bootstrap-table.min.css">
+<script src="plugins/BootstrapTable/bootstrap-table.min.js"></script>
+<script src="plugins/BootstrapTable/bootstrap-table-zh-CN.min.js"></script>
+
+<link href="plugins/timepicker/bootstrap-datetimepicker.min.css" rel="stylesheet"><!--日期和时间样式-->
+<script type="text/javascript" src="plugins/timepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script><!--日期和时间表单组件-->
+<script type="text/javascript" src="plugins/timepicker/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script><!--日期和时间表单组件-->
+</body>
+</html>

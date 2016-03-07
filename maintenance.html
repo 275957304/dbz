@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 -- 当前故障处理</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li><a href="assets.html">我的资产</a></li>
+		<li><a href="monitor.html">我的监测</a></li>
+		<li class="active"><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="maintenance.html" class="active">当前故障处理</a>
+	<a href="maintenance_history.html">历史维保信息</a>
+	<a href="maintenance_renewal.html">续保管理</a>
+</div>
+
+ 
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="maintenance.html">设备维保</a></li>
+		<li class="active">当前故障处理</li>
+	</ol>
+	
+	<div class="box">
+		<div class="box-header with-border">
+			<div class="search">
+				<form class="form-warning p10">
+					<!--显示选择导航-->
+					<dl id="selectResult" class="select-result">
+						<dt>已选分类：</dt>
+						<dd class="select-no">暂时没有选择分类条件</dd>			
+					</dl>
+					<!--显示选择导航END-->
+					<div class="row">
+						<div class="col-xs-4">
+							<input type="text" class="form-control col-sm-6 ie-w100" placeholder="请输入设备名称/IP/部件名称">
+						</div>
+						<div class="col-xs-3">
+							<button type="submit" class="btn btn-default mr10"><i class="fa fa-search"></i> 搜索</button> 
+							<div class="open-div">
+								<a class="text-primary collapsed" data-toggle="collapse" data-target="#searchMore" aria-expanded="false" aria-controls="searchMore" href="javascript:;">
+									<span class="more">更多查询条件 <i class="fa fa-chevron-circle-down"></i></span><span class="simple">精简查询条件 <i class="fa fa-chevron-circle-up"></i></span>	
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="form-inline collapse mt10 ie-header4" id="searchMore">
+						<div id="selectNum"><!--select 外面要加这个 id="selectNum"-->
+							<select class="form-control mr10">
+								<option value="故障状态">选择故障状态</option>
+								<option value="已报障">已报障</option>
+								<option value="已确认">已确认</option>
+								<option value="故障解决">故障解决</option>
+							</select>
+							
+							<select class="form-control mr10">
+								<option value="产商">选择产商</option>
+								<option value="IBM">IBM</option>
+								<option value="HP">HP</option>
+								<option value="DELL">DELL</option>
+								<option value="华为">华为</option>
+								<option value="新浪潮">新浪潮</option>
+							</select>
+							
+							<select class="form-control mr10">
+								<option value="维保单位">选择维保单位</option>
+								<option value="青峰">青峰</option>
+								<option value="创好维">创好维</option>
+								<option value="运维通">运维通</option>
+							</select>
+							
+							<select class="form-control">
+								<option value="责任人">选择责任人</option>
+								<option value="李明">李明</option>
+								<option value="张大力">张大力</option>
+								<option value="古道一">古道一</option>
+							</select>
+						</div>
+						<div class="mt10">
+							<div class="checkbox mr10 ie-w90">告警发生时间:</div>
+							<input class="form-control selecTime" type="text" placeholder="开始时间" value="">
+							<div class="checkbox text-muted ie-to">至</div>
+							<input class="form-control selecTime" type="text" placeholder="停止时间" value="">
+						</div>
+					
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="box-body">
+			<div class="p10">
+				<div class="malfunction">
+					<div class="prod-colgroup">
+						<table class="table-prod-tit">
+						<colgroup>
+							<col style="width:30%;">
+							<col style="width:15%;">
+							<col style="width:15%;">
+							<col style="width:25%;">
+							<col style="width:15%;">
+						</colgroup>
+						<tbody>
+						<tr>
+							<th>故障情况</th>
+							<th>故障发生时间</th>
+							<th>故障状态</th>
+							<th>设备信息</th>				
+							<th>处理操作</th>
+						</tr>
+						</tbody>
+						</table>
+					</div>
+					<!--分页-->
+					<div class="prod-page">
+						<ul class="m0 pagination pagination-sm">
+							<li><a aria-label="Previous" href="#"><span aria-hidden="true">上一页</span></a></li>
+							<li><a aria-label="Next" href="#"><span aria-hidden="true">下一页</span></a></li>
+						</ul>
+					</div>
+					<!--分页 END-->
+					<div class="prod">
+						<table class="table-prod">
+							<colgroup>
+								<col style="width:30%;">
+								<col style="width:15%;">
+								<col style="width:15%;">
+								<col style="width:25%;">
+								<col style="width:15%;">
+							</colgroup>
+							<tbody>
+								<tr class="prod-top">
+									<td>故障编号:YH20160929001</td>
+									<td colspan="3"><span class="mr10">维保单位:青峰</span> <a class="dialog" href="javascript:;"><i class="fa fa-commenting"></i> 联系维保</a></td>
+									<td>责任人:李科</td>
+								</tr>
+								<tr class="prod-list">
+									<td>
+										<div class="situation clearfix">
+											<img class="pic" src="images/default-50x50.gif">
+											主板型号<br>
+											主板 states 故障情况描述
+										</div>
+									</td>
+									<td class="text-center">2016-5-6 14:29:01</td>
+									<td>已报修</td>
+									<td>
+										设备：WIN-DD3EDLJ8GRK <br>
+										IP:  192.168.100.32 <br>
+										所在位置：上海5号机房  I3机柜 3U
+									</td>
+									<td class="prod-list-last">
+										<a class="btn btn-default btn-xs" href="system_timeline.html">进度查询</a>
+										<a class="btn btn-default btn-xs" href="maintenance_confirm.html">确认解决</a>
+										<a class="btn btn-default btn-xs" href="maintenance_inquire.html">详情查询</a>
+										<a class="btn btn-default btn-xs" href="maintenance_rating.html">服务评价</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<div class="prod">
+						<table class="table-prod">
+							<colgroup>
+								<col style="width:30%;">
+								<col style="width:15%;">
+								<col style="width:15%;">
+								<col style="width:25%;">
+								<col style="width:15%;">
+							</colgroup>
+							<tbody>
+								<tr class="prod-top">
+									<td>故障编号:YH20160929001</td>
+									<td colspan="3"><span class="mr10">维保单位:青峰</span> <a class="dialog" href="javascript:;"><i class="fa fa-commenting"></i> 联系维保</a></td>
+									<td>责任人:李科</td>
+								</tr>
+								<tr class="prod-list">
+									<td>
+										<div class="situation clearfix">
+											<img class="pic" src="images/default-50x50.gif">
+											主板型号<br>
+											主板 states 故障情况描述
+										</div>
+									</td>
+									<td class="text-center">2016-5-6 14:29:01</td>
+									<td>工程师正在路上</td>
+									<td>
+										设备：WIN-DD3EDLJ8GRK <br>
+										IP:  192.168.100.32 <br>
+										所在位置：上海5号机房  I3机柜 3U
+									</td>
+									<td class="prod-list-last">
+										<a class="btn btn-default btn-xs" href="system_timeline.html">进度查询</a>
+										<a class="btn btn-default btn-xs" href="maintenance_confirm.html">确认解决</a>
+										<a class="btn btn-default btn-xs" href="maintenance_inquire.html">详情查询</a>
+										<a class="btn btn-default btn-xs" href="maintenance_rating.html">服务评价</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<div class="prod">
+						<table class="table-prod">
+							<colgroup>
+								<col style="width:30%;">
+								<col style="width:15%;">
+								<col style="width:15%;">
+								<col style="width:25%;">
+								<col style="width:15%;">
+							</colgroup>
+							<tbody>
+								<tr class="prod-top">
+									<td>故障编号:YH20160929001</td>
+									<td colspan="3"><span class="mr10">维保单位:青峰</span> <a class="dialog" href="javascript:;"><i class="fa fa-commenting"></i> 联系维保</a></td>
+									<td>责任人:李科</td>
+								</tr>
+								<tr class="prod-list">
+									<td>
+										<div class="situation clearfix">
+											<img class="pic" src="images/default-50x50.gif">
+											主板型号<br>
+											主板 states 故障情况描述
+										</div>
+									</td>
+									<td class="text-center">2016-5-6 14:29:01</td>
+									<td>工程师正在路上</td>
+									<td>
+										设备：WIN-DD3EDLJ8GRK <br>
+										IP:  192.168.100.32 <br>
+										所在位置：上海5号机房  I3机柜 3U
+									</td>
+									<td class="prod-list-last">
+										<a class="btn btn-default btn-xs" href="system_timeline.html">进度查询</a>
+										<a class="btn btn-default btn-xs" href="maintenance_confirm.html">确认解决</a>
+										<a class="btn btn-default btn-xs" href="maintenance_inquire.html">详情查询</a>
+										<a class="btn btn-default btn-xs" href="maintenance_rating.html">服务评价</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<!--分页-->
+					<div class="prod-page mt10">
+						<ul class="m0 pagination pagination-sm">
+							<li><a aria-label="Previous" href="#"><span aria-hidden="true">上一页</span></a></li>
+							<li><a aria-label="Next" href="#"><span aria-hidden="true">下一页</span></a></li>
+						</ul>
+					</div>
+					<!--分页 END-->
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="plugins/jQueryUI/jquery-ui.min.js"></script> <!--增加了jquery ui-->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+<link rel="stylesheet" href="plugins/timepicker/bootstrap-datetimepicker.min.css"><!--日期和时间表单组件，样式-->
+<script type="text/javascript" src="plugins/timepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script><!--日期和时间表单组件-->
+<script type="text/javascript" src="plugins/timepicker/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script><!--日期和时间表单组件-->
+
+<link rel="stylesheet" href="plugins/jspanel/jquery.jspanel.min.css"><!--对话框弹出组件  -->
+<script type="text/javascript" src="plugins/jspanel/jquery.jspanel.min.js" charset="UTF-8"></script><!--对话框弹出组件-->
+
+<script type="text/javascript">
+//联系维保
+$('.dialog').click(function (e) {
+	"use strict";
+	e.preventDefault();
+	$.jsPanel({
+		ajax: {
+			url: 'example-ajax.html'    //    http://ml.vxinyou.com/zt/ajax/file/maintenance.html
+		},
+		title:    '联系维保',
+		size:     {width: 400, height:450},
+		position: 'center',
+		theme:    'info'
+	});
+});	
+</script>
+</body>
+</html>

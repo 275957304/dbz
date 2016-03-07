@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 -- 当前故障处理</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li><a href="assets.html">我的资产</a></li>
+		<li><a href="monitor.html">我的监测</a></li>
+		<li class="active"><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="maintenance.html">当前故障处理</a>
+	<a href="maintenance_history.html">历史维保信息</a>
+	<a class="active" href="maintenance_renewal.html">续保管理</a>
+</div>
+
+ 
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="maintenance.html">设备维保</a></li>
+		<li class="active">当前故障处理</li>
+	</ol>
+	
+	<div class="box">
+		<div class="box-header with-border">
+			<i class="fa fa-building-o"></i>
+			服务器续保
+		</div>
+		<div class="box-body">
+			<div class="p10">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="xubao">		
+							<div class="media">
+								<div class="media-left text-center">
+									<img class="center-block" alt="图片" alt="图片" width="130" height="130" src="images/server.png">									
+								</div>
+								<div class="media-body">
+									<ul class="list-unstyled confirm-list">
+										<li><span>设备名称:</span> work-OA-1</li>
+										<li><span>厂  商:</span> HP</li>
+										<li><span>过保时间:</span> 2016-5-6</li>
+										<li><span>目前状态:</span> 已过保</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-sm-4">
+						<div class="xubao">		
+							<div class="media">
+								<div class="media-left text-center">
+									<img class="center-block" alt="图片" alt="图片" width="130" height="130" src="images/server.png">									
+								</div>
+								<div class="media-body">
+									<ul class="list-unstyled confirm-list">
+										<li><span>设备名称:</span> work-OA-1</li>
+										<li><span>厂  商:</span> HP</li>
+										<li><span>过保时间:</span> 2016-5-6</li>
+										<li><span>目前状态:</span> 已过保</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-sm-4">
+						<div class="xubao">		
+							<div class="media">
+								<div class="media-left text-center">
+									<img class="center-block" alt="图片" alt="图片" width="130" height="130" src="images/server.png">									
+								</div>
+								<div class="media-body">
+									<ul class="list-unstyled confirm-list">
+										<li><span>设备名称:</span> work-OA-1</li>
+										<li><span>厂  商:</span> HP</li>
+										<li><span>过保时间:</span> 2016-5-6</li>
+										<li><span>目前状态:</span> 已过保</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+				</div>
+				
+				<div class="panel panel-list">
+					<div class="panel-heading">选择维保单位</div>
+					<div class="panel-body">
+						<table class="table table-bordered table-striped table-hover" data-toggle="table" data-mobile-responsive="true" data-page-size="5">
+							<thead>
+								<tr>
+									<th>选择</th>
+									<th>维保单位</th>
+									<th>所在城市</th>
+									<th>联系人</th>
+									<th>联系电话</th>
+									<th>Email</th>
+									<th>服务评价</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"></td>
+									<td>上海青峰</td>
+									<td>上海</td>
+									<td>江月</td>
+									<td>15819256892</td>
+									<td>wrrrq@gzDT.com</td>
+									<td>
+										<a class="btn btn-default btn-xs" href="maintenance_evaluation.html"><i class="fa fa-eye"></i> 查看评价</a>
+									</td>
+								</tr>
+								<tr>
+									<td><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"></td>
+									<td>上海青峰</td>
+									<td>上海</td>
+									<td>江月</td>
+									<td>15819256892</td>
+									<td>wrrrq@gzDT.com</td>
+									<td>
+										<a class="btn btn-default btn-xs" href="maintenance_evaluation.html"><i class="fa fa-eye"></i> 查看评价</a>
+									</td>
+								</tr>
+								<tr>
+									<td><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"></td>
+									<td>上海青峰</td>
+									<td>上海</td>
+									<td>江月</td>
+									<td>15819256892</td>
+									<td>wrrrq@gzDT.com</td>
+									<td>
+										<a class="btn btn-default btn-xs" href="maintenance_evaluation.html"><i class="fa fa-eye"></i> 查看评价</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<div class="panel panel-default no-shadow no-radius form-horizontal">
+					<div class="panel-heading">设备维保信息</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<label for="startTime" class="col-sm-4 control-label">续保开始日期</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control selecTime" placeholder="请选择开始日期"> <!-- selecTime这个是控制时间的 如果要精确到小时 selecTime-hh  -->
+								<p>设备续保开始日期</p>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">续保年限</label>
+							<div class="col-sm-4">
+								<select id="type" class="form-control">
+									<option value="选择修保年限">选择修保年限</option>
+									<option value="一年">一年</option>
+									<option value="二年">二年</option>
+									<option value="三年">三年</option>
+									<option value="四年">四年</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">续保费用</label>
+							<div class="col-sm-4">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="请输续保费用" aria-describedby="basic-addon">
+									<span class="input-group-addon" id="basic-addon">元</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<p class="text-center">
+					<a class="btn btn-info mt10" href="#">确认维保</a>
+				</p>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+  
+
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+<link rel="stylesheet" href="plugins/timepicker/bootstrap-datetimepicker.min.css"><!--日期和时间表单组件，样式-->
+<script type="text/javascript" src="plugins/timepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script><!--日期和时间表单组件-->
+<script type="text/javascript" src="plugins/timepicker/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script><!--日期和时间表单组件-->
+</body>
+</html>

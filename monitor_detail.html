@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 -- 当前告警详情</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li><a href="assets.html">我的资产</a></li>
+		<li class="active"><a href="monitor.html">我的监测</a></li>
+		<li><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="monitor.html" class="active">当前告警</a>
+	<a href="monitor_equipment.html">设备监测</a>
+	<a href="monitor_engine.html">机房监测</a>
+	<a href="monitor_offline.html">离线计划管理</a>
+	<a href="monitor_history.html">历史告警</a>
+</div>
+
+ 
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="monitor.html">我的监测</a></li>
+		<li class="active">当前告警详情</li>
+	</ol>
+	
+	<div class="box">
+		<div class="box-header with-border">
+			<p class="bg-info p10 text-info">告警详细信息</p>
+			<div class="warning-detail">
+				<dl class="dl-horizontal">
+					<dt>告警ID</dt>
+					<dd class="text-red">2721</dd>
+				</dl>
+				<dl class="dl-horizontal">
+					<dt>告警字段</dt>
+					<dd>业务告警：业务视图/经纪业务系统/UF2.0集中交易系统</dd>
+				</dl>
+				<dl class="dl-horizontal">
+					<dt>当前状态</dt>
+					<dd>1个异常,1个警告</dd>
+				</dl>
+				<dl class="dl-horizontal">
+					<dt>附加字段</dt>
+					<dd>业务视图/经纪业务系统/UF2.0集中交易系统/马场热备系统/DB/RBQSDB(124.23.45.25) 服务依赖/资源视图业务视图/经纪业务系统/UF2.0集中交易系统/马场热备系统/DB/RBQSDB(124.23.45.25) 服务依赖/资源视图业务视图/经纪业务系统/UF2.0集中交易系统/马场热备系统/DB/RBQSDB(124.23.45.25) 服务依赖/资源视图</dd>
+				</dl>
+			</div>
+ 
+		</div>
+		<div class="box-body">	
+			<p class="bg-info p10 text-info">告警处理</p>
+				<table class="table">
+					<tbody>
+						<tr>
+							<td class="text-right text-primary">管理IP地址</td>
+							<td>173.56.7.8</td>
+							<td class="text-right text-primary">设备名称</td>
+							<td>UF2.0集中交易系统</td>
+						</tr>
+						<tr>
+							<td class="text-right text-primary">严重级别</td>
+							<td><span class="label label-danger">紧急</span>  <span class="label label-warning">一般</span>  <span class="label label-success">正常</span></td>
+							<td class="text-right text-primary">次数</td>
+							<td><b>11</b></td>
+						</tr>
+						
+						<tr>
+							<td class="text-right text-primary">告警首次发生时间</td>
+							<td>2015-11-12 16:45:26</td>
+							<td class="text-right text-primary">更新时间</td>
+							<td>2015-01-17 09:45:26</td>
+						</tr>
+						
+						<tr>
+							<td class="text-right text-primary">确认时间</td>
+							<td>Na</td>
+							<td class="text-right text-primary">评注时间</td>
+							<td>Na</td>
+						</tr>
+						
+						<tr>
+							<td class="text-right text-primary">对象类型</td>
+							<td>服务</td>
+							<td class="text-right text-primary">事件类别</td>
+							<td>业务告警</td>
+						</tr>
+						
+						<tr>
+							<td class="text-right text-primary">故障状态</td>
+							<td>----</td>
+							<td class="text-right text-primary">确认人</td>
+							<td>NA</td>
+						</tr>
+						
+						<tr>
+							<td class="text-right text-primary">关联业务</td>
+							<td>/业务视图/经纪业务系统/UF2.0</td>
+							<td class="text-right text-primary">代理商</td>
+							<td>云峰</td>
+						</tr>
+
+						<tr>
+							<td class="text-right text-primary">处理描述</td>
+							<td colspan="3"><textarea class="form-control" rows="2"></textarea></td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="text-center p10">
+					<button type="button" class="btn btn-success mr10">确认并报修</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭告警</button>
+				</p>
+		</div>
+	</div>
+</div>
+
+
+ 
+
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+ 
+</body>
+</html>

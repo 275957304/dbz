@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 -- 设备资产</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li class="active"><a href="assets.html">我的资产</a></li>
+		<li><a href="monitor.html">我的监测</a></li>
+		<li><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="assets.html" class="active">设备资产</a>
+	<a href="assets_business.html">业务资产</a>
+	<a href="assets_engineroom.html">机房机架</a>
+	<a href="assets_responsible.html">责任人管理</a>
+	<a href="assets_agents.html">代理商信息</a>
+</div>
+
+ 
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="assets.html">资产管理</a></li>
+		<li><a href="#">设备资产</a></li>
+		<li class="active">生产数据库服务器</li>
+	</ol>
+	
+	<div class="box">
+		<div class="box-header with-border">
+			<i class="fa fa-server"></i>
+			生产数据库服务器
+		</div>
+		<div class="box-body">
+		<div class="p10">
+			
+			<div class="alert alert-green p5"><b>填写指引：</b>第一步，填写设备的基本信息，保存成功后，继续完善设备的配置信息，以及管理信息。</div>
+			
+			<div class="mt10">
+				<div class="btn-group btn-group-justified assets-tab">
+					<a class="btn btn-default" href="assets_info.html"><i class="fa fa-sticky-note"></i> 基本信息</a>
+					<a class="btn btn-default active" href="assets_info2.html"><i class="fa fa-user"></i> 管理信息</a>
+					<a class="btn btn-default" href="assets_info3.html"><i class="fa fa-cogs"></i> 配置信息</a>
+				</div>
+			</div>
+			
+			<div class="assets-box">
+				<form class="form-horizontal">
+					<!--设备管理信息-->
+					<div class="panel panel-default no-shadow">
+						<div class="panel-heading">设备管理信息</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="code">资产编号</label>
+								<div class="col-sm-4">
+									<input type="text" placeholder="请填写编辑" id="code" class="form-control">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">关健级别</label>
+								<div class="col-sm-4">
+									<select id="" class="form-control">
+										<option value="重要">重要</option>
+										<option value="一般">一般</option>
+									</select>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">维保级别</label>
+								<div class="col-sm-4">
+									<select id="" class="form-control">
+										<option value="金牌">金牌</option>
+										<option value="白金">白金</option>
+									</select>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="Responsible" class="col-sm-3 control-label">责任人</label>
+								<div class="col-sm-5">
+									<div class="row">	 
+										<div class="col-sm-6">
+											<select class="form-control" id="Responsible">
+												<option value="选择责任人">选择责任人</option>
+												<option value="黎明">黎明</option>
+												<option value="李科">李科</option>
+												<option value="大力">大力</option>
+											</select>
+										</div>
+										<div class="col-sm-6">
+											<p class="form-control-static">找不到责任人？<a href="responsible.html" class="btn btn-info btn-xs"><i class="fa fa-plus"></i> 新增一个</a></p>
+										</div>
+									</div>
+								</div>	
+							</div>
+						</div>
+					</div><!--设备管理信息END-->
+					
+					<!--设备用途-->
+					<div class="panel panel-default no-shadow">
+						<div class="panel-heading">设备用途</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">所属部门</label>
+								<div class="col-sm-4">
+									<input type="text" placeholder="设备所属部门" class="form-control">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">设备用途</label>
+								<div class="col-sm-6">
+									<textarea class="form-control" rows="2"></textarea>
+								</div>
+							</div>
+							
+	 
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="Responsible">关联的业务</label>
+								<div class="col-sm-5">
+									<div class="row">	 
+										<div class="col-sm-6">
+											<input type="text" placeholder="请选择关联业务" disabled="" class="form-control">
+										</div>
+										<div class="col-sm-6">
+											<div class="form-control-static">
+											<button data-target="#seletAssets" data-toggle="modal" class="btn btn-info btn-xs" type="button"><i class="fa fa-check-square-o"></i> 选择业务资产 </button>
+											</div>
+										</div>
+									</div>
+								</div>	
+							</div>
+						</div>
+					</div><!--设备用途END-->
+					
+					<!--设备采购信息-->
+					<div class="panel panel-default no-shadow">
+						<div class="panel-heading">设备采购信息</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">采购日期</label>
+								<div class="col-sm-4">
+									<input class="form-control" type="text" placeholder="请选择采购日期" id="shopTime">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">报修到期日期</label>
+								<div class="col-sm-4">
+									<input class="form-control" type="text" placeholder="请选择报修到期日期" id="seleTime">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="Responsible" class="col-sm-3 control-label">代理商</label>
+								<div class="col-sm-6">
+									<div class="row">	 
+										<div class="col-sm-5">
+											<select class="form-control">
+												<option value="小明">小明</option>
+												<option value="大力">大力</option>
+												<option value="钟燕">钟燕</option>
+											</select>
+										</div>
+										<div class="col-sm-7">
+											<p class="form-control-static">
+											没有这个代理商？
+											<a href="agents.html" class="btn btn-info btn-xs"><i class="fa fa-user-plus"></i> 新增一人代理商</a>
+											</p>
+										</div>
+									</div>
+								</div>	
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">代理商联系人</label>
+								<div class="col-sm-4">
+									<input class="form-control" type="text" placeholder="请填写联系人姓名" >
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="email" class="col-sm-3 control-label">邮 箱</label>
+								<div class="col-sm-4">
+									<input class="form-control" type="email" id="email" placeholder="请填写联系人邮箱" >
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="phone" class="col-sm-3 control-label">电 话</label>
+								<div class="col-sm-4">
+									<input class="form-control" type="tel" id="phone" placeholder="请填写电话号码" >
+								</div>
+							</div>
+						</div>
+					</div><!--设备采购信息END-->
+					
+					
+					<!--相关合同-->
+					<div class="panel panel-default no-shadow">
+						<div class="panel-heading">
+							<a class="btn btn-success no-radius btn-xs pull-right" onclick="AddRow(document.getElementById('xgEditor'))" href="javascript:;"><i class="fa fa-plus"></i> 新增一行</a>
+							相关合同
+						</div>
+						<div class="panel-body">
+							
+							<table id="xgEditor" class="table-editor">
+								<tbody>
+									<tr>
+										<td >合同编号</td>
+										<td><input type="text" placeholder="请填写合同编号" class="form-control"></td>
+										<td>合同名称</td>
+										<td><input type="text" placeholder="请填写合同编号" class="form-control"></td>
+										<td>签订时间</td>
+										<td><input type="text" placeholder="请填写合同编号" class="form-control"></td>
+										<td><a onclick="deleteBatchRow(this)" href="javascript:;" data-placement="top" data-toggle="tooltip" data-original-title="关闭" class="btn btn-danger btn-xs"><i class="fa fa-close"></i></a></td>
+									</tr>
+								</tbody>
+							</table>
+							
+						</div>
+					</div><!--相关合同END-->
+					
+					<!--外部服务-->
+					<div class="panel panel-default no-shadow">
+						<div class="panel-heading">外部服务</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">选择维保单位</label>
+								<div class="col-sm-5">
+									<div class="row">	 
+										<div class="col-sm-6">
+											<select id="Responsible" class="form-control">
+												<option value="选择维保单位">选择维保单位</option>
+												<option value="广州运维通">广州运维通</option>
+												<option value="上海维保单位">上海维保单位</option>
+											</select>
+										</div>
+										<div class="col-sm-6">
+											<p class="form-control-static">找不到维保方？<a class="btn btn-info btn-xs" href="#"><i class="fa fa-plus"></i> 新增一个</a></p>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">联系人</label>
+								<div class="col-sm-4">
+									<input class="form-control" type="text"  placeholder="请填外服公司联系人" >
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">联系电话</label>
+								<div class="col-sm-4">
+									<input class="form-control" type="text"  placeholder="请填外服公司联系电话" >
+								</div>
+							</div>
+							
+						</div>
+					</div><!--外部服务END-->
+					
+					<div class="form-group">
+						<div class="col-sm-offset-4 col-sm-5">
+							<button type="button" class="btn btn-success mr10"> 保 存 </button>
+							<button type="button" class="btn btn-default mr10"> 返 回 </button>
+						</div>
+					</div>
+					
+				</form>
+			</div>
+				
+				
+		
+		</div>
+		</div>
+	</div>
+</div>
+  
+
+  
+  
+  
+  
+  
+  
+<!-- 选择业务资产 -->
+<div class="modal fade" id="seletAssets" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				选择业务资产
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<a data-placement="bottom" data-toggle="tooltip" data-original-title="新增" class="btn btn-info btn-xs pull-right mr10" href="#"><i class="fa fa-plus"></i></a>
+			</div>
+			<div class="modal-body">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th><input type="checkbox"></th>
+							<th>业务资产名称</th>
+							<th>描述</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>OA系统</td>
+							<td>办公使用系统</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>ERP生产系统</td>
+							<td>生产系统，重要性高</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>邮件系统</td>
+							<td>邮件收发系统</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>  
+  
+  
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+</body>
+</html>

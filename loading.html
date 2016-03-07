@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真</title>
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+
+<!--下面是chartjs插件兼容IE8-->
+<!--[if lte IE 8]>
+	<script src="plugins/chartjs/excanvas.min.js"></script>
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+
+
+
+
+
+
+
+
+<div class="loading"> <!-- 隐藏加样式 loading-hide -->
+	<div class="loading-progress">
+		加载中...
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li class="active"><a href="admin.html">概览</a></li>
+		<li><a href="assets.html">我的资产</a></li>
+		<li><a href="monitor.html">我的监测</a></li>
+		<li><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a class="active" href="admin.html">监测概览</a>
+	<a href="assets_overview.html">资产概览</a>
+</div>
+
+<div class="main">
+	<!--下载提示-->
+	<div class="box box-default p10">
+		<span class="text-success">未能检测到您的代理服务器，请下载安装</span> <a class="btn btn-sm btn-info btn-flat" href="javascript::;">Agent2.06下载</a>
+	</div>
+	<!--右边区-->
+	<div class="main-right">
+ 
+		<div class="bg-info">
+			<img class="img-responsive" src="images/banner.jpg"/>
+		</div>
+		<!--最新提醒信息-->
+		<div class="box box-default mt10">
+			<div class="box-header with-border">
+				<h4 class="box-title">最新提醒信息 <span class="badge bg-yellow" title="" data-toggle="tooltip" data-original-title="3条最新信息">3</span></h4>
+				<div class="box-tools pull-right">
+					<button data-widget="collapse" class="btn btn-box-tool" type="button"><i class="fa fa-minus"></i></button>
+				</div>
+			</div>
+			<div class="box-body">
+				<div id="remind-list">
+					<ul class="txt-list">
+						<li><span class="new_time">15-12-08</span><a href="#"><em>1</em>服务器WINDOWS-V63YA68 2016-3-8保修到期</a></li>
+						<li><span class="new_time">15-12-18</span><a href="#"><em>2</em>服务器WINDOWS-V63YA68 cpu部件资产数据有变更</a></li>
+						<li><span class="new_time">15-12-08</span><a href="#"><em>3</em>服务器WINDOWS-V63YA68 2016-3-8保修到期</a></li>
+						<li><span class="new_time">15-12-18</span><a href="#"><em>4</em>服务器WINDOWS-V63YA68 cpu部件资产数据有变更</a></li>
+						<li><span class="new_time">15-12-08</span><a href="#"><em>5</em>服务器WINDOWS-V63YA68 2016-3-8保修到期</a></li>
+						<li><span class="new_time">15-12-18</span><a href="#"><em>6</em>服务器WINDOWS-V63YA68 cpu部件资产数据有变更</a></li>
+						<li><span class="new_time">15-12-08</span><a href="#"><em>7</em>服务器WINDOWS-V63YA68 2016-3-8保修到期</a></li>
+						<li><span class="new_time">15-12-18</span><a href="#"><em>8</em>服务器WINDOWS-V63YA68 cpu部件资产数据有变更</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--最新提醒信息END-->
+		
+		<!--最新提醒信息-->
+		<div class="box box-default">
+			<div class="box-header with-border">
+				<h4 class="box-title">下载区</h4>
+				<div class="box-tools pull-right">
+					<button data-widget="collapse" class="btn btn-box-tool" type="button"><i class="fa fa-minus"></i></button>
+				</div>
+			</div>
+			<div class="box-body">
+				<a class="btn btn-app"><i class="fa fa-download"></i> 下载1.2版本</a>
+				<a class="btn btn-app"><i class="fa fa-cart-plus"></i> 购买会员</a>
+				<a class="btn btn-app"><i class="fa fa-edit"></i> Edit</a>
+			</div>
+		</div>
+		<!--最新提醒信息END-->
+		
+		<!--联系我们-->
+		<div class="box box-default">
+			<div class="box-header with-border">
+				<h4 class="box-title">联系我们</h4>
+				<div class="box-tools pull-right">
+					<button data-widget="collapse" class="btn btn-box-tool" type="button"><i class="fa fa-minus"></i></button>
+				</div>
+			</div>
+			<div class="box-body">
+				<p><img class="center-block" title="微信公众号：dbz" alt="微信公众号：dbz" src="images/gzh.jpg"/></p> 
+				<p class="text-muted text-center">微信公众号：dbz</p>
+				<p><i class="fa fa-qq text-muted"></i> QQ客服 ：36546767888</p>
+				<p><i class="fa fa-fax text-muted"></i> 客服热线：400-7831</p>
+			</div>
+		</div>
+		<!--联系我们END-->
+	</div>
+	
+	<!--左边区-->
+	<div class="main-left">
+		<div class="content">
+			
+			<div class="area-box clearfix">
+				
+				<div class="item2">
+					<div class="info-box">
+						<span class="info-box-icon"><!--i class="fa fa-eye"></i--><i class="fa fa-server"></i></span>
+						<div class="info-box-content">
+							<span class="info-box-top">服务器设备</span>
+							<div class="info-body">
+								<span class="info-box-text">设备数：30</span>
+								<span class="info-box-text">纳管数：20</span>	
+							</div>
+							<div class="info-box-footer">
+								<a href="monitor_equipment.html">查看监测</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="item2">
+					<div class="info-box">
+						<span class="info-box-icon"><i class="fa fa-database"></i></span>
+						<div class="info-box-content">
+							<span class="info-box-top">存储设备</span>
+							<div class="info-body">
+								<span class="info-box-text">设备数：0</span>
+							</div>
+							<div class="info-box-footer">
+								<a href="assets.html">查看设备</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="item2">
+					<div class="info-box">
+						<span class="info-box-icon"><i class="fa fa-wifi"></i></span>
+						<div class="info-box-content">
+							<span class="info-box-top">网络设备</span>
+							<div class="info-body">
+								<span class="info-box-text">还没有设备</span>
+							</div>
+							<div class="info-box-footer">
+								<a href="assets.html">查看设备</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="item2">
+					<div class="info-box">
+						<span class="info-box-icon"><i class="fa fa-building"></i></span>
+						<div class="info-box-content">
+							<span class="info-box-top">主机设备</span>
+							<div class="info-body">
+								<span class="info-box-text">还没有设备</span>
+							</div>
+							<div class="info-box-footer">
+								<a href="assets.html">查看设备</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="item2">
+					<div class="info-box">
+						<span class="info-box-icon"><i class="fa fa-yelp"></i></span>
+						<div class="info-box-content">
+							<span class="info-box-top">机房空调</span>
+							<div class="info-body">
+								<span class="info-box-text">还没有设备</span>
+							</div>
+							<div class="info-box-footer">
+								<a href="assets.html">查看设备</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+			
+			<div class="row">
+				<section class="col-lg-4">
+					<div class="box box-default">
+						<div class="box-header with-border">
+							<h4 class="box-title">设备实时状态统计</h4>
+							<div class="box-tools pull-right">
+								<button data-widget="collapse" class="btn btn-box-tool" type="button"><i class="fa fa-minus"></i></button>
+							</div>
+						</div>
+						<div class="box-body">
+							<!--统计 数据写在下面js里-->
+							<canvas class="center-block" id="equipmentChart" height="150" width="150"></canvas>
+						</div>
+						<div class="box-footer clearfix">
+							<i class="fa fa-circle-o text-red"></i> 严重
+							<i class="fa fa-circle-o text-green"></i> 正常
+							<i class="fa fa-circle-o text-yellow"></i> 警告
+							<a class="btn btn-sm btn-default btn-flat pull-right" href="monitor_equipment.html">查看设备</a>
+						</div>
+					</div>
+				</section>
+				<section class="col-lg-8">
+					<div class="box box-default">
+						<div class="box-header with-border">
+							<h4 class="box-title">实时告警 <span class="badge bg-yellow" title="" data-toggle="tooltip" data-original-title="12条告警">12</span></h4>
+							<div class="box-tools pull-right">
+								<button data-widget="collapse" class="btn btn-box-tool" type="button"><i class="fa fa-minus"></i></button>
+								<a href="monitor.html" class="btn btn-sm btn-default btn-xs">更多 <i class="fa fa-plus"></i></a>
+							</div>
+						</div>
+						<div class="box-body alarm">
+							<div id="alarm-box">
+								<table class="table table-striped">
+									<tbody>
+										<tr>
+											<td>2016/5/6 10:18:45</td>
+											<td>WINDOWS-V63YA68(192.168.0123)</td>
+											<td>虚拟机/Cent_mysql_48/ 状态:关机</td>
+											<td><a class="btn btn-default btn-xs" href="monitor_detail.html">详情</a></td>
+										</tr>
+										<tr>
+											<td>2016/5/6 10:18:45</td>
+											<td>localdomainost1.loc(192.168.100.31)</td>
+											<td>Ping 192.168.100.210 ping不通</td>
+											<td><a class="btn btn-default btn-xs" href="monitor_detail.html">详情</a></td>
+										</tr>
+										<tr>
+											<td>2016/5/6 10:18:45</td>
+											<td>WINDOWS-V63YA1(192.168.0.11)</td>
+											<td>虚拟机/Cent_mysql_48/ 状态:关机</td>
+											<td><a class="btn btn-default btn-xs" href="monitor_detail.html">详情</a></td>
+										</tr>
+										<tr>
+											<td>2016/5/6 10:18:45</td>
+											<td>WINDOWS-V63YA68(192.168.0123)</td>
+											<td>虚拟机/Cent_mysql_48/状态:关机</td>
+											<td><a class="btn btn-default btn-xs" href="monitor_detail.html">详情</a></td>
+										</tr>
+										<tr>
+											<td>2016/5/6 10:18:45</td>
+											<td>localdomainost1.loc(192.168.100.31)</td>
+											<td>Ping 192.168.100.210/ping不通</td>
+											<td><a class="btn btn-default btn-xs" href="monitor_detail.html">详情</a></td>
+										</tr>
+										<tr>
+											<td>2016/5/6 10:18:45</td>
+											<td>WINDOWS-V63YA1(192.168.0.11)</td>
+											<td>虚拟机/Cent_mysql_48/状态:关机</td>
+											<td><a class="btn btn-default btn-xs" href="monitor_detail.html">详情</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<!--按时间统计-->
+			<div class="box box-default">
+				<div class="box-header with-border">
+					<h4 class="box-title">设备正常状态统计</h4>
+					<div class="box-tools pull-right">
+						<button data-widget="collapse" class="btn btn-box-tool" type="button"><i class="fa fa-minus"></i></button>
+					</div>
+					
+					<div class="statistical-time">
+						<select class="form-control input-sm">
+							<option>选择统计时间段</option>
+							<option>统计24小时内的设备</option>
+							<option>统计7天内的设备</option>
+							<option>统计30天内的设备</option>
+						</select>
+					</div>
+				</div>
+				<div class="box-body">
+					<div id="timeChartBox">
+						<canvas class="center-block" id="timeChart" height="220" width="1000"></canvas>
+					</div>
+				</div>
+			</div>
+			<!--按时间统计END-->
+			
+			<!--报修进度-->
+			<div class="box box-default">
+				<div class="box-header with-border">
+					<h4 class="box-title">报修进度</h4>
+					<div class="box-tools pull-right">
+						<button data-widget="collapse" class="btn btn-box-tool" type="button"><i class="fa fa-minus"></i></button>
+					</div>
+				</div>
+				<div class="box-body">
+					<!-- 第一条报修进度 -->
+					<div class="schedule">
+						<ul class="list-inline list-txt">
+							<li><i class="fa fa-inbox"></i> CPU1 states</li>
+							<li><span>发生时间:</span>2016-5-6 12:45:09</li>
+							<li><span>设备名称:</span>生产数据库服务器1</li>
+							<li><span>IP:</span>192.168.0.31</li>
+						</ul>
+						<div class="step-box p10">
+							<ul class="clearfix">
+								<li class="active"> <!--到达了那一步就给那个li加上样式 active-->
+									<div class="step-text">设备报障</div>
+									<span class="step-bar"><em>1</em></span>
+									<div class="time">2016-5-6 14:29:32</div>
+								</li>
+								<li class="active">
+									<div class="step-text">维保方确认故障</div>
+									<span class="step-bar"><em>2</em></span>
+									<div class="time">2016-5-6 14:29:32</div>
+								</li>
+								<li class="active">
+									<div class="step-text">工程师 刘道一 正在路上</div>
+									<span class="step-bar"><em>3</em></span>
+									<div class="time">预计到达时间:2016-5-7 09:30</div>
+								</li>
+								<li class="active">
+									<div class="step-text">故障解决</div>
+									<span class="step-bar"><em>4</em></span>
+									<div class="time">2016-5-7 10:49:32</div>
+								</li>
+								<li>
+									<div class="step-text">评价</div>
+									<span class="step-bar"><em>5</em></span>
+									<div class="time">2016-5-7 11:49:32</div>
+								</li>
+							</ul>
+						</div>
+					</div><!-- 第一条报修进度END -->
+ 
+					<!-- 第二条报修进度 -->
+					<div class="schedule">
+						<ul class="list-inline list-txt">
+							<li><i class="fa fa-inbox"></i> CPU1 states</li>
+							<li><span>发生时间:</span>2016-5-6 12:45:09</li>
+							<li><span>设备名称:</span>生产数据库服务器1</li>
+							<li><span>IP:</span>192.168.0.31</li>
+						</ul>
+						<div class="step-box p10">
+							<ul class="clearfix">
+								<li class="active">
+									<div class="step-text">设备报障</div>
+									<span class="step-bar"><em>1</em></span>
+									<div class="time">2016-5-6 14:29:32</div>
+								</li>
+								<li class="active">
+									<div class="step-text">维保方确认故障</div>
+									<span class="step-bar"><em>2</em></span>
+									<div class="time">2016-5-6 14:29:32</div>
+								</li>
+								<li>
+									<div class="step-text">工程师 刘道一 正在路上</div>
+									<span class="step-bar"><em>3</em></span>
+									<div class="time">预计到达时间:2016-5-7 09:30</div>
+								</li>
+								<li>
+									<div class="step-text">故障解决</div>
+									<span class="step-bar"><em>4</em></span>
+									<div class="time">2016-5-7 10:49:32</div>
+								</li>
+								<li>
+									<div class="step-text">评价</div>
+									<span class="step-bar"><em>5</em></span>
+									<div class="time">2016-5-7 11:49:32</div>
+								</li>
+							</ul>
+						</div>
+					</div><!-- 第二条报修进度END -->
+ 
+					
+				</div>
+			</div>
+			<!--报修进度END-->
+			
+		</div>
+	</div>
+</div>
+
+<footer class="main-footer">
+<div class="pull-right hidden-xs">
+<b>Version</b> 0.0.1
+</div>
+<strong>Copyright &copy; 2014-2015 低保真.</strong> All rights reserved.
+</footer>
+ 
+  
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+<!-- FastClick -->
+<script src="plugins/fastclick/fastclick.js"></script>
+
+
+<!-- SlimScroll 1.3.0  滚动条-->
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="plugins/slimScroll/dome.slimscroll.js"></script>
+
+<!-- ChartJS 1.0.1 绘图,折线图、柱状图-->
+<script src="plugins/chartjs/Chart.min.js"></script>
+<script style="text/javascript">
+	$(window).load(function(){ 
+		//设备实时状态统计
+		var pieData = [
+			{value: 30,color:"#F38630"},
+			{value : 50,color : "#E0E4CC"},
+			{value : 100,color : "#69D2E7"}			
+		]
+		var myPie = new Chart(document.getElementById("equipmentChart").getContext("2d")).Pie(pieData);
+		
+		//设备正常状态统计
+		var lineChartData = {
+			labels : ["January","February","March","April","May","June","July"],
+			datasets : [
+				{
+					fillColor : "rgba(151,187,205,0.5)",
+					strokeColor : "rgba(151,187,205,1)",
+					pointColor : "rgba(151,187,205,1)",
+					pointStrokeColor : "#fff",
+					data : [28,48,40,19,96,27,100]
+				}
+			]	
+		}
+		var myLine = new Chart(document.getElementById("timeChart").getContext("2d")).Line(lineChartData);  //程序 lineChartData
+	});
+ 
+ 
+	
+</script>
+</body>
+</html>

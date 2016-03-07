@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 -- 机房机架</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li class="active"><a href="assets.html">我的资产</a></li>
+		<li><a href="monitor.html">我的监测</a></li>
+		<li><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="nav-con">
+	<a href="assets.html">设备资产</a>
+	<a href="assets_business.html">业务资产</a>
+	<a href="assets_engineroom.html" class="active">机房机架</a>
+	<a href="assets_responsible.html">责任人管理</a>
+	<a href="assets_agents.html">代理商信息</a>
+</div>
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="assets.html">资产管理</a></li>
+		<li><a href="assets_business.html">设备资产</a></li>
+		<li class="active">机房机架</li>
+	</ol>
+	
+	<div class="box">
+		<div class="box-header with-border clearfix">
+			<div class="mt10 pull-left">
+			<i class="fa fa-building-o"></i>
+			托维机房
+			</div>
+			<a href="assets_engineroom_edit2.html" class="btn btn-info pull-right mr10"><i class="fa fa-plus"></i> 添加机架</a>
+			<a href="assets_engineroom_edit.html" class="btn btn-info pull-right mr10"><i class="fa fa-plus"></i> 新增机房</a>
+		</div>
+		<div class="box-body engineroon">
+			<div class="map-box">
+				<div class="text-right">
+					<i class="fa fa-check-circle text-green"></i> 正常
+					<i class="fa fa-times-circle text-red"></i> 紧急
+					<i class="fa fa-exclamation-circle text-yellow"></i> 停止
+					<i class="fa fa-minus-circle text-gray"></i> 主要
+				</div>
+				
+				<!--第一个-->
+				<div class="map-txt">
+					<ul class="list-inline bg-info p10 text-primary">
+						<li class="mr10">负责人：<strong>黎明</strong></li>
+						<li class="mr10">联系电话：<strong>15890589323</strong></li>
+						<li class="mr10">地址：广东省深圳市华强路80号创维大厦 5楼506房</li>
+						<li><a class="btn btn-info btn-xs" href="assets_engineroom_edit.html"><i class="glyphicon glyphicon-pencil"></i> 编辑</a></li>
+					</ul>
+				</div>
+				<div class="map-area">
+					<div class="map" style="width:2000px; height:1500px;">  <!-- 根据地图大小这里给宽高 -->
+						<a href="#" class="normal" style="left:300px; top:150px;">正常</a>
+						<a href="monitor_engine_detail.html" class="urgent" style="left:350px; top:150px;">紧急</a>
+						<a href="monitor_engine_detail.html" class="stop" style="left:400px; top:150px;">停止</a>
+						<a href="#" class="main" style="left:450px; top:150px;">主要</a>
+						<a href="monitor_engine_detail.html" class="stop" style="left:1200px; top:550px;">停止</a>
+						<a href="#" class="main" style="left:450px; top:1100px;">主要</a>
+					</div>
+				</div>
+				<!--第一个 END-->
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+  
+
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="plugins/jQueryUI/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//移动机架
+	$(".map a").draggable({
+		//containment: "parent",
+		distance: 20,
+		cursor:"move",
+		grid:[50,50],
+		scrollSpeed: 100,
+		scrollSensitivity: 100,
+		scroll: true 
+	});
+});
+</script>
+</body>
+</html>

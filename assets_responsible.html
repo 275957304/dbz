@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 -- 责任人管理</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li class="active"><a href="assets.html">我的资产</a></li>
+		<li><a href="monitor.html">我的监测</a></li>
+		<li><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="assets.html">设备资产</a>
+	<a href="assets_business.html">业务资产</a>
+	<a href="assets_engineroom.html">机房机架</a>
+	<a href="assets_responsible.html" class="active">责任人管理</a>
+	<a href="assets_agents.html">代理商信息</a>
+</div>
+
+ 
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="assets.html">资产管理</a></li>
+		<li><a href="assets_business.html">设备资产</a></li>
+		<li class="active">责任人管理</li>
+	</ol>
+	
+	<div class="box">
+		<div class="box-header with-border clearfix">
+			<div class="mt10 pull-left">
+				<i class="fa fa-users"></i>
+				责任人管理
+			</div>
+			<a class="btn btn-info pull-right mr10" href="responsible.html"><i class="fa fa-plus"></i> 新增责任人</a>
+		</div>
+		<div class="box-body">
+			<div class="row">
+				<!--第一个责任人-->
+				<div class="col-md-6">
+					<div class="box responsible-box">
+						<div class="box-header">
+							<ul class="list-inline confirm-list pull-left">
+								<li class="mr10"><span>责任人:</span> <b>李明</b></li>
+								<li><span><i class="fa fa-fax"></i></span> 020888888</li>
+								<li><span><i class="fa fa-envelope-o"></i></span> wilong@qq.com</li>
+								<li><span><i class="fa fa-comments"></i></span> wx1232142</li>
+							</ul>
+							<a data-original-title="管理设备" data-toggle="tooltip" data-placement="top" href="assets_responsible_edit.html" class="btn btn-primary btn-xs pull-right"><i class="fa fa-cog"></i></a>
+							<button data-target="#selectDevice" data-toggle="modal" class="btn btn-info btn-xs pull-right mr10" type="button"><i class="fa fa-plus"></i></button>
+						</div>
+						<div class="box-body">
+							<div class="device">
+								<div class="accordion">
+									<dl>
+										<!-- X86服务器 -->
+										<dt><span class="accordionBtn">+</span> <a href="assets.html">X86服务器</a> <span class="badge pull-right">3台</span></dt>
+										<dd>
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th>资源名称</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>X86服务器1</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+													<tr>
+														<td>X86服务器2</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+												</tbody>
+											</table>
+										</dd>
+										<!-- X86服务器END -->
+										
+										<!-- 小型机 -->
+										<dt><span class="accordionBtn">+</span> <a href="assets.html">小型机</a> <span class="badge pull-right">1台</span></dt>
+										<dd>
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th>资源名称</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>小型机1</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+													<tr>
+														<td>小型机2</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+												</tbody>
+											</table>
+										</dd>
+										<!-- 小型机END -->
+										
+										<!-- 存储 -->
+										<dt><span class="accordionBtn">+</span> <a href="assets.html">存储</a> <span class="badge pull-right">3台</span> </dt>
+										<dd>
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th>资源名称</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>存储1</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+													<tr>
+														<td>存储c</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+												</tbody>
+											</table>
+										</dd>
+										<!-- 存储END -->
+										
+										<!-- 电源设备 -->
+										<dt><span class="accordionBtn">+</span> <a href="assets.html">电源设备</a> <span class="badge pull-right">3台</span> </dt>
+										<dd>
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th>资源名称</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>电源设备1</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+													<tr>
+														<td>电源设备2</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+												</tbody>
+											</table>
+										</dd>
+										<!-- 电源设备END -->
+										
+										<!-- 网络设备 -->
+										<dt><span class="accordionBtn">+</span> <a href="assets.html">网络设备</a> <span class="badge pull-right">3台</span> </dt>
+										<dd>
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th>资源名称</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>网络设备1</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+													<tr>
+														<td>网络设备2</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+												</tbody>
+											</table>
+										</dd>
+										<!-- 网络设备END -->
+										
+										<!-- 环境设备 -->
+										<dt><span class="accordionBtn">+</span> <a href="assets.html">环境设备</a> <span class="badge pull-right">3台</span> </dt>
+										<dd>
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th>资源名称</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>环境设备1</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+													<tr>
+														<td>环境设备2</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+												</tbody>
+											</table>
+										</dd>
+										<!-- 环境设备END -->
+										
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--第一个责任人 END-->
+				
+				
+				<!--第二个责任人-->
+				<div class="col-md-6">
+					<div class="box responsible-box">
+						<div class="box-header">
+							<ul class="list-inline confirm-list pull-left">
+								<li class="mr10"><span>责任人:</span> <b>李明</b></li>
+								<li><span><i class="fa fa-fax"></i></span> 020888888</li>
+								<li><span><i class="fa fa-envelope-o"></i></span> wilong@qq.com</li>
+								<li><span><i class="fa fa-comments"></i></span> wx1232142</li>
+							</ul>
+							<a data-original-title="管理设备" data-toggle="tooltip" data-placement="top" href="assets_responsible_edit.html" class="btn btn-primary btn-xs pull-right"><i class="fa fa-cog"></i></a>
+							<button data-target="#selectDevice" data-toggle="modal" class="btn btn-info btn-xs pull-right mr10" type="button"><i class="fa fa-plus"></i></button>
+						</div>
+						<div class="box-body">
+							<div class="device">
+								<div class="accordion">
+									<dl>
+										
+										<!-- 环境设备 -->
+										<dt><span class="accordionBtn">+</span> <a href="assets.html">环境设备</a> <span class="badge pull-right">3台</span> </dt>
+										<dd>
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th>资源名称</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>环境设备1</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+													<tr>
+														<td>环境设备2</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+												</tbody>
+											</table>
+										</dd>
+										<!-- 环境设备END -->
+										
+										<!-- 环境设备 -->
+										<dt><span class="accordionBtn">+</span> <a href="assets.html">环境设备</a> <span class="badge pull-right">3台</span> </dt>
+										<dd>
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th>资源名称</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>环境设备1</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+													<tr>
+														<td>环境设备2</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+												</tbody>
+											</table>
+										</dd>
+										<!-- 环境设备END -->
+										
+										<!-- 环境设备 -->
+										<dt><span class="accordionBtn">+</span> <a href="assets.html">环境设备</a> <span class="badge pull-right">3台</span> </dt>
+										<dd>
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th>资源名称</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>环境设备1</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+													<tr>
+														<td>环境设备2</td>
+														<td><a class="btn btn-danger btn-xs" href="javascript:;" onclick="deleteBatchRow(this)" data-original-title="删除" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove"></i></a></td>
+													</tr>
+												</tbody>
+											</table>
+										</dd>
+										<!-- 环境设备END -->
+										
+										
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--第二个责任人 END-->
+				
+				
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- 增加设备-->
+<div class="modal fade" id="selectDevice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				增加设备
+			</div>
+			<div class="modal-body">
+				<div class="form-inline">
+					你选择的是: <input type="text"  disabled="" class="form-control jstree-selec">
+					<div id="jstree"></div>
+				</div>
+				<div class="mb10 text-center">
+					<button class="btn btn-success mr10" type="button">确认</button>
+					<button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+  
+
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script><!-- 滚动条插件 -->
+<link rel="stylesheet" href="plugins/jstree/style.min.css"><!--树状菜单 样式-->
+<script src="plugins/jstree/jstree.min.js"></script><!--树状菜单-->
+
+
+<script type="text/javascript">
+$(function(){
+	//弹出框 树状菜单
+	$('#jstree').jstree({
+		"checkbox" : {"keep_selected_style" : false},"plugins" : [ "checkbox" ],   //这一行是加多选框的，去掉就单选
+		'core' : {
+			'data' : {
+				"url" : "jstree.json",
+				"dataType" : "json"
+			}
+		}
+	});
+
+	//输出选择的元素
+	$('#jstree').on('changed.jstree', function (e, data) {
+		var i, j, r = [];
+		for(i = 0, j = data.selected.length; i < j; i++) {
+			r.push(data.instance.get_node(data.selected[i]).text);
+		}
+		$('.jstree-selec').val(r.join(', '));
+	}).jstree();
+	
+});	
+</script>
+
+
+<script type="text/javascript">
+$(function(){
+	//责任人设置滚动条
+	$('.device').slimScroll({height: '245px'});
+});
+</script> 
+</body>
+</html>

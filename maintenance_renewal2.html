@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 --  未过保设备</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li><a href="assets.html">我的资产</a></li>
+		<li><a href="monitor.html">我的监测</a></li>
+		<li class="active"><a href="maintenance.html">我的维保</a></li>
+		<li><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="maintenance.html">当前故障处理</a>
+	<a href="maintenance_history.html">历史维保信息</a>
+	<a class="active" href="maintenance_renewal.html">续保管理</a>
+</div>
+
+ 
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="maintenance.html">设备维保</a></li>
+		<li class="active"> 未过保设备</li>
+	</ol>
+	
+	<div class="box">
+		<div class="box-header with-border">
+			<i class="fa fa-align-justify"></i>
+			续保管理
+		</div>
+		<div class="box-body">
+			<div class="p10">
+				
+				<div class="btn-group btn-group-justified assets-tab">
+					<a href="maintenance_renewal.html" class="btn btn-default"><i class="fa fa-check-square-o"></i> 已过保设备</a>
+					<a href="maintenance_renewal2.html" class="btn btn-default active"><i class="fa fa-minus-square-o"></i> 未过保设备</a>
+				</div>
+				<div style="margin-top:20px;" class="form-inline mb10">
+					<div class="form-group">
+						<select class="form-control">
+							<option value="全部">全部</option>
+							<option value="服务器">服务器</option>
+							<option value="存储">存储</option>
+							<option value="网络设备">网络设备</option>
+							<option value="电源设备">电源设备</option>
+							<option value="环境设备">环境设备</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<select class="form-control">
+							<option value="选择">选择日期</option>
+							<option value="30天内" selected="">30天内</option>
+							<option value="60天内">60天内</option>
+						</select>
+					</div>
+				</div>
+				<table class="table table-bordered table-striped table-hover" data-toggle="table" data-mobile-responsive="true" data-pagination="true" data-page-size="10">
+					<thead>
+						<tr>
+							<th data-field="state" data-checkbox="true"></th>
+							<th data-sortable="true">过保日期</th>
+							<th>IP</th>
+							<th>设备名称</th>
+							<th>序列号</th>
+							<th>设备类型</th>
+							<th>产商</th>
+							<th>型号</th>
+							<th data-sortable="true">采购日期</th>
+							<th>位置</th>
+							<th>维保单位</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>2016-5-12</td>
+							<td>192.168.100.28</td>
+							<td>work-oracle-1</td>
+							<td>ERTY-WQYU</td>
+							<td>服务器</td>
+							<td>Haiwei</td>
+							<td>Proliant DL580</td>
+							<td>2012-5-12</td>
+							<td>上海A机房  I3机柜  4U</td>
+							<td>广州运维通</td>
+							<td>
+								<a href="maintenance_evaluation.html" class="btn btn-default btn-xs">查评论</a>
+								<a class="btn btn-info btn-xs" href="maintenance_xubao.html">续保</a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>2016-5-12</td>
+							<td>192.168.100.28</td>
+							<td>work-erp-1</td>
+							<td>ERTY-WQYU</td>
+							<td>存储</td>
+							<td>HP</td>
+							<td>Proliant DL580</td>
+							<td>2014-5-12</td>
+							<td>广州5号机房  I2机柜 12U</td>
+							<td>广州运维通</td>
+							<td>
+								<a href="maintenance_evaluation.html" class="btn btn-default btn-xs">查评论</a>
+								<a class="btn btn-info btn-xs" href="maintenance_xubao.html">续保</a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>2016-5-12</td>
+							<td>192.168.100.28</td>
+							<td>work-erp-1</td>
+							<td>ERTY-WQYU</td>
+							<td>电源</td>
+							<td>DELL</td>
+							<td>Proliant DL580</td>
+							<td>2016-7-12</td>
+							<td>上海A机房</td>
+							<td>上海青峰代理</td>
+							<td>
+								<a href="#" class="btn btn-default btn-xs">查评论</a>
+								<a class="btn btn-info btn-xs" href="maintenance_xubao.html">续保</a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>2016-5-12</td>
+							<td>192.168.100.28</td>
+							<td>work-erp-1</td>
+							<td>ERTY-WQYU</td>
+							<td>电源</td>
+							<td>DELL</td>
+							<td>Proliant DL580</td>
+							<td>2011-7-12</td>
+							<td>上海A机房</td>
+							<td>上海青峰代理</td>
+							<td>
+								<a href="#" class="btn btn-default btn-xs">查评论</a>
+								<a class="btn btn-info btn-xs" href="maintenance_xubao.html">续保</a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>2016-5-12</td>
+							<td>192.168.100.28</td>
+							<td>work-erp-1</td>
+							<td>ERTY-WQYU</td>
+							<td>电源</td>
+							<td>DELL</td>
+							<td>Proliant DL580</td>
+							<td>2016-7-11</td>
+							<td>上海A机房</td>
+							<td>上海青峰代理</td>
+							<td>
+								<a href="#" class="btn btn-default btn-xs">查评论</a>
+								<a class="btn btn-info btn-xs" href="maintenance_xubao.html">续保</a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>2016-5-12</td>
+							<td>192.168.100.28</td>
+							<td>work-erp-1</td>
+							<td>ERTY-WQYU</td>
+							<td>电源</td>
+							<td>DELL</td>
+							<td>Proliant DL580</td>
+							<td>2016-2-12</td>
+							<td>上海A机房</td>
+							<td>上海青峰代理</td>
+							<td>
+								<a href="#" class="btn btn-default btn-xs">查评论</a>
+								<a class="btn btn-info btn-xs" href="maintenance_xubao.html">续保</a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>2016-5-12</td>
+							<td>192.168.100.28</td>
+							<td>work-erp-1</td>
+							<td>ERTY-WQYU</td>
+							<td>电源</td>
+							<td>DELL</td>
+							<td>Proliant DL580</td>
+							<td>2013-3-12</td>
+							<td>上海A机房</td>
+							<td>上海青峰代理</td>
+							<td>
+								<a href="#" class="btn btn-default btn-xs">查评论</a>
+								<a class="btn btn-info btn-xs" href="maintenance_xubao.html">续保</a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>2016-5-12</td>
+							<td>192.168.100.28</td>
+							<td>work-erp-1</td>
+							<td>ERTY-WQYU</td>
+							<td>电源</td>
+							<td>DELL</td>
+							<td>Proliant DL580</td>
+							<td>2016-7-12</td>
+							<td>上海A机房</td>
+							<td>上海青峰代理</td>
+							<td>
+								<a href="#" class="btn btn-default btn-xs">查评论</a>
+								<a class="btn btn-info btn-xs" href="maintenance_xubao.html">续保</a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>2016-5-12</td>
+							<td>192.168.100.28</td>
+							<td>work-erp-1</td>
+							<td>ERTY-WQYU</td>
+							<td>电源</td>
+							<td>DELL</td>
+							<td>Proliant DL580</td>
+							<td>2016-7-12</td>
+							<td>上海A机房</td>
+							<td>上海青峰代理</td>
+							<td>
+								<a href="#" class="btn btn-default btn-xs">查评论</a>
+								<a class="btn btn-info btn-xs" href="maintenance_xubao.html">续保</a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>2016-5-12</td>
+							<td>192.168.100.28</td>
+							<td>work-erp-1</td>
+							<td>ERTY-WQYU</td>
+							<td>电源</td>
+							<td>DELL</td>
+							<td>Proliant DL580</td>
+							<td>2016-7-12</td>
+							<td>上海A机房</td>
+							<td>上海青峰代理</td>
+							<td>
+								<a href="#" class="btn btn-default btn-xs">查评论</a>
+								<a class="btn btn-info btn-xs" href="maintenance_xubao.html">续保</a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>2016-5-12</td>
+							<td>192.168.100.28</td>
+							<td>work-erp-1</td>
+							<td>ERTY-WQYU</td>
+							<td>电源</td>
+							<td>DELL</td>
+							<td>Proliant DL580</td>
+							<td>2016-7-12</td>
+							<td>上海A机房</td>
+							<td>上海青峰代理</td>
+							<td>
+								<a href="#" class="btn btn-default btn-xs">查评论</a>
+								<a class="btn btn-info btn-xs" href="maintenance_xubao.html">续保</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+  
+
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+<!-- BootstrapTable -->
+<link rel="stylesheet" href="plugins/BootstrapTable/bootstrap-table.min.css">
+<script src="plugins/BootstrapTable/bootstrap-table.min.js"></script>
+<script src="plugins/BootstrapTable/bootstrap-table-zh-CN.min.js"></script>
+</body>
+</html>

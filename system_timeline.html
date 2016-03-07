@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>低保真 -- 密保与消息工具</title>
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="css/bsie.css">
+<![endif]-->
+</head>
+<body class="sidebar-mini">
+<div class="main-header">
+	<div class="header-logo">
+		<a target="_blank" href="/"><img src="images/admin/admin-logo.png"/></a>
+	</div>
+	<ul class="header-nav">
+		<li><a href="admin.html">概览</a></li>
+		<li><a href="assets.html">我的资产</a></li>
+		<li><a href="monitor.html">我的监测</a></li>
+		<li><a href="maintenance.html">我的维保</a></li>
+		<li class="active"><a href="system.html">管理中心</a></li>
+	</ul>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+					<i class="glyphicon glyphicon-user"></i>
+					<span class="hidden-xs">andy@163.com</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="system.html">用户中心</a></li>
+					<li><a href="system_password.html">密码管理</a></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="system_news.html"><i class="fa fa-envelope-o"></i><span class="label label-success">4</span></a></li>
+			<li><a href="#" title="帮助中心" data-placement="bottom" data-toggle="tooltip" data-original-title="帮助中心"><i class="fa fa-question-circle"></i></a></li>	
+			<li><a href="#" title="退出" data-placement="bottom" data-toggle="tooltip" data-original-title="退出"><i class="fa fa-power-off"></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="nav-con">
+	<a href="system.html" class="active">用户中心</a>
+	<a href="system_license.html">许可证信息</a>
+	<a href="system_log.html">消息</a>
+</div>
+
+ 
+
+<div class="container">
+	<!--位置组件-->
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> <a href="system.html">系统管理</a></li>
+		<li class="active">故障处理进度查看</li>
+	</ol>
+	
+	<div class="box">
+		<div class="box-header with-border">	
+			<div class="timeline-top">
+				<div class="media">
+					<div class="media-left"><img alt="100x100" width="100" height="100" class="media-object" src="images/cpu.jpg"></div>
+					<div class="media-body">
+						<p>当前进度：  <span class="text-muted">维保单位已确认故障</span></p>
+						<p>代理商：<span class="text-muted">东莞青峰</span></p>
+						<p>部件品牌：<span class="text-muted">Intel(R) Xeon(R) CPU E5-2603 0 @ 1.80GHz</span></p>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div class="box-body">
+			<div class="system-content">
+				<!--维修进度条-->
+				<ul class="timeline">
+					<li>
+						<i class="fa fa-chevron-down bg-aqua"></i>
+						<div class="timeline-item">
+							<span class="time"><i class="fa fa-clock-o"></i> 2016-5-9  15:35:19</span>
+							<div class="timeline-header"> 
+								<p>故障首次发生时间：2016-5-9 15:26:09</p>
+								<p>运维人员确认报障上报人： 李科</p>
+							</div>
+						</div>
+					</li>
+					
+					<li>
+						<i class="fa fa-chevron-down bg-aqua"></i>
+						<div class="timeline-item">
+							<span class="time"><i class="fa fa-clock-o"></i> 2016-5-9  16:35:19</span>
+							<div class="timeline-header"> 
+								维保单位<span class="text-primary">青峰</span>对故障进行确认, 认定属于部件故障 联系电话:  13568901246
+							</div>
+						</div>
+					</li>
+					
+					<li>
+						<i class="fa fa-chevron-down bg-aqua"></i>
+						<div class="timeline-item">
+							<span class="time"><i class="fa fa-clock-o"></i> 2016-5-9  16:35:19</span>
+							<div class="timeline-header"> 
+								<p>厂商已安排维修工程师 刘道一  前来维修</p>
+								</p>预计到达时间2016-5-10 10:30  联系电话:13568901246</p>
+							</div>
+						</div>
+					</li>
+					
+					<li>
+						<i class="fa fa-chevron-down bg-aqua"></i>
+						<div class="timeline-item">
+							<span class="time"><i class="fa fa-clock-o"></i> 2016-5-9  16:35:19</span>
+							<div class="timeline-header"> 
+								故障解决
+							</div>
+						</div>
+					</li>
+				
+				
+				</ul>
+				<!--维修进度条END-->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+</body>
+</html>

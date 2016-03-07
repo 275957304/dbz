@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> 按钮</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="plugins/jQuery/jquery.min.js"></script>
+ 
+    <script src="js/bootstrap.min.js"></script>
+ 
+ 
+    <script src="js/app.min.js"></script> 
+
+ 
+  </head>
+  <body>
+    <div class="wrapper">
+  <div class="box box-primary">
+                <div class="box-header">
+                  <i class="fa fa-edit"></i>
+                  <h3 class="box-title">Buttons</h3>
+                </div>
+                <div class="box-body pad table-responsive">
+                  <table class="table table-bordered">
+                    <tbody><tr>
+                      <th>Normal</th>
+                      <th>Large <code>.btn-lg</code></th>
+                      <th>Small <code>.btn-sm</code></th>
+                      <th>X-Small <code>.btn-xs</code></th>
+                      <th>Flat <code>.btn-flat</code></th>
+                      <th>Disabled <code>.disabled</code></th>
+                    </tr>
+                    <tr>
+                      <td><button class="btn btn-block btn-default">Default</button></td>
+                      <td><button class="btn btn-block btn-default btn-lg">Default</button></td>
+                      <td><button class="btn btn-block btn-default btn-sm">Default</button></td>
+                      <td><button class="btn btn-block btn-default btn-xs">Default</button></td>
+                      <td><button class="btn btn-block btn-default btn-flat">Default</button></td>
+                      <td><button class="btn btn-block btn-default disabled">Default</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="btn btn-block btn-primary">Primary</button></td>
+                      <td><button class="btn btn-block btn-primary btn-lg">Primary</button></td>
+                      <td><button class="btn btn-block btn-primary btn-sm">Primary</button></td>
+                      <td><button class="btn btn-block btn-primary btn-xs">Primary</button></td>
+                      <td><button class="btn btn-block btn-primary btn-flat">Primary</button></td>
+                      <td><button class="btn btn-block btn-primary disabled">Primary</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="btn btn-block btn-success">Success</button></td>
+                      <td><button class="btn btn-block btn-success btn-lg">Success</button></td>
+                      <td><button class="btn btn-block btn-success btn-sm">Success</button></td>
+                      <td><button class="btn btn-block btn-success btn-xs">Success</button></td>
+                      <td><button class="btn btn-block btn-success btn-flat">Success</button></td>
+                      <td><button class="btn btn-block btn-success disabled">Success</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="btn btn-block btn-info">Info</button></td>
+                      <td><button class="btn btn-block btn-info btn-lg">Info</button></td>
+                      <td><button class="btn btn-block btn-info btn-sm">Info</button></td>
+                      <td><button class="btn btn-block btn-info btn-xs">Info</button></td>
+                      <td><button class="btn btn-block btn-info btn-flat">Info</button></td>
+                      <td><button class="btn btn-block btn-info disabled">Info</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="btn btn-block btn-danger">Danger</button></td>
+                      <td><button class="btn btn-block btn-danger btn-lg">Danger</button></td>
+                      <td><button class="btn btn-block btn-danger btn-sm">Danger</button></td>
+                      <td><button class="btn btn-block btn-danger btn-xs">Danger</button></td>
+                      <td><button class="btn btn-block btn-danger btn-flat">Danger</button></td>
+                      <td><button class="btn btn-block btn-danger disabled">Danger</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="btn btn-block btn-warning">Warning</button></td>
+                      <td><button class="btn btn-block btn-warning btn-lg">Warning</button></td>
+                      <td><button class="btn btn-block btn-warning btn-sm">Warning</button></td>
+                      <td><button class="btn btn-block btn-warning btn-xs">Warning</button></td>
+                      <td><button class="btn btn-block btn-warning btn-flat">Warning</button></td>
+                      <td><button class="btn btn-block btn-warning disabled">Warning</button></td>
+                    </tr>
+                  </tbody></table>
+                </div><!-- /.box -->
+              </div>
+			  
+			  
+<div class="col-md-3">			  
+	<div class="box box-default box-solid">
+		<div class="box-header">
+			<h3 class="box-title">Loading state</h3>
+		</div>
+		<div class="box-body">
+			这里是一个loading 实例
+		</div>		
+		<!-- Loading-->
+			<div class="overlay">
+				<i class="fa fa-refresh fa-spin"></i>
+			</div>
+		<!-- end loading -->		
+	</div>	
+
+ 
+	
+	<button type="button" id="myStateButton" data-complete-text="加载中..." class="btn btn-primary" autocomplete="off">
+	点击加载
+	</button>
+
+	<script>
+	$('#myStateButton').on('click', function () {
+		$(this).button('complete');
+	})
+	</script>
+	
+</div>	
+
+
+<div class="col-md-3">
+	<div class="box box-solid">
+	<div class="box-header with-border">
+		<i class="fa fa-text-width"></i>
+		<h3 class="box-title">文字颜色样式</h3>
+	</div>
+	<div class="box-body">
+		<p class="lead">加样式<code>.lead</code></p>
+		<p class="text-green">加样式<code>.text-green</code></p>
+		<p class="text-aqua">加样式<code>.text-aqua</code></p>
+		<p class="text-light-blue">加样式<code>.text-light-blue</code></p>
+		<p class="text-red">加样式<code>.text-red</code></p>
+		<p class="text-yellow">加样式<code>.text-yellow</code></p>
+		<p class="text-muted">加样式<code>.text-muted</code></p>
+	</div>
+	</div>
+</div>
+
+<div class="col-md-3">
+	<div class="box box-solid">
+	<div class="box-header with-border">
+		<i class="fa fa-calculator"></i>
+		<h3 class="box-title">表格说明1</h3>
+	</div>
+	<div class="box-body">
+		<table class="table">
+		  <thead>
+			<tr>
+			  <th>#</th>
+			  <th>First Name</th>
+			  <th>Last Name</th>
+			  <th>Username</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <th scope="row">1</th>
+			  <td>Mark</td>
+			  <td>Otto</td>
+			  <td>@mdo</td>
+			</tr>
+			<tr>
+			  <th scope="row">3</th>
+			  <td>Larry</td>
+			  <td>the Bird</td>
+			  <td>@twitter</td>
+			</tr>
+		  </tbody>
+		</table>
+		<pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table"</span><span class="nt">&gt;</span>
+		...
+		<span class="nt">&lt;/table&gt;</span></pre>
+		
+	</div>
+	</div>
+</div>	
+
+
+<div class="col-md-3">
+	<div class="box box-solid">
+	<div class="box-header with-border">
+		<i class="fa fa-calculator"></i>
+		<h3 class="box-title">表格说明2</h3>
+	</div>
+	<div class="box-body">
+		<table class="table table-striped">
+		  <thead>
+			<tr>
+			  <th>#</th>
+			  <th>First Name</th>
+			  <th>Last Name</th>
+			  <th>Username</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <th scope="row">1</th>
+			  <td>Mark</td>
+			  <td>Otto</td>
+			  <td>@mdo</td>
+			</tr>
+			<tr>
+			  <th scope="row">3</th>
+			  <td>Larry</td>
+			  <td>the Bird</td>
+			  <td>@twitter</td>
+			</tr>
+			<tr>
+			  <th scope="row">3</th>
+			  <td>Larry</td>
+			  <td>the Bird</td>
+			  <td>@twitter</td>
+			</tr>
+		  </tbody>
+		</table>
+		<pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-striped"</span><span class="nt">&gt;</span>
+		...隔行变色
+		<span class="nt">&lt;/table&gt;</span></pre>
+		
+	</div>
+	</div>
+</div>		
+
+
+<div class="col-md-3">
+	<div class="box box-solid">
+	<div class="box-header with-border">
+		<i class="fa fa-calculator"></i>
+		<h3 class="box-title">表格说明3</h3>
+	</div>
+	<div class="box-body">
+		<table class="table table-hover">
+		  <thead>
+			<tr>
+			  <th>#</th>
+			  <th>First Name</th>
+			  <th>Last Name</th>
+			  <th>Username</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <th scope="row">1</th>
+			  <td>Mark</td>
+			  <td>Otto</td>
+			  <td>@mdo</td>
+			</tr>
+			<tr>
+			  <th scope="row">3</th>
+			  <td>Larry</td>
+			  <td>the Bird</td>
+			  <td>@twitter</td>
+			</tr>
+			<tr>
+			  <th scope="row">3</th>
+			  <td>Larry</td>
+			  <td>the Bird</td>
+			  <td>@twitter</td>
+			</tr>
+		  </tbody>
+		</table>
+		<pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-hover"</span><span class="nt">&gt;</span>
+		...鼠标放上去加背景色
+		<span class="nt">&lt;/table&gt;</span></pre>
+		
+	</div>
+	</div>
+</div>	
+ 
+			  
+			  
+			  
+    </div><!-- ./wrapper -->
+
+  
+   
+
+  </body>
+</html>
