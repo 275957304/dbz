@@ -55,13 +55,13 @@ a:hover {color:#303030;}
 #enterpriseLogin .input-group{margin-bottom:15px; width:100%;}
 .error_msg{margin:-10px 0 10px; color:red; text-align:center;}
 .register{padding:100px 0 60px; background:#eff1f1;}
-.register-box{width:510px; margin:0 auto; background:#fff; padding: 25px 60px;}
+.register-box{width:510px; margin:0 auto; background:#fff; padding: 25px 40px;}
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover{background-color: #3dbce5; border-radius:0;}
 .register .nav{padding-bottom:15px; border-bottom:1px solid #eee; margin-bottom:20px;}
 .register .form-group{margin-bottom:20px;}
 .register .tab-content .title {width:95px; text-align:right; font-weight: normal;}
-.register .form-control{border-radius:0; width:250px;}
-.register p.error{font-size:12px; margin:3px 0 0 0; padding-left:95px; color:red;}
+.register .form-control{border-radius:0; width:200px;}
+.register p.error{font-size:12px; margin:3px 0 0 0; padding-left:5px; color:red; display:inline;}
 @media (max-width:768px){
 	.indexSlider .carousel-inner,.carousel-inner>.item>a>img, .carousel-inner>.item>img{height:200px;}
 	.carousel-inner>.item>a>img, .carousel-inner>.item>img{width:auto;}

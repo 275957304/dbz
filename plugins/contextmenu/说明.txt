@@ -1,0 +1,23 @@
+//右键删除
+$('.map a').contextMenu('myMenu1',{
+	menuStyle: { //菜单样式
+		border:"2px solid #000"
+	},
+	itemStyle: { //菜单项样式
+		fontFamily : "verdana",
+		backgroundColor :"green",
+		color:"white",
+		border:"none",
+		padding:"1px"
+	},
+	itemHoverStyle: {  //菜单项鼠标放在上面样式
+		color: "blue",
+		backgroundColor:"red",
+		border:"none"
+	},
+	bindings:{
+		'delete': function(t) {
+			alert('Trigger was '+ t.id +'\nAction was Delete');
+		}
+	}
+});

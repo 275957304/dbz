@@ -101,6 +101,7 @@
 								<div class="form-group">
 									<label class="title" for="email"> <span class="red">*</span> Email：</label>
 									<input type="text" placeholder="登录系统，并用来接收消息通知" class="form-control" id="email" name="email">
+									<p class="error">这里是提示信息</p>
 								</div>
 								
 								<div class="form-group">
@@ -291,64 +292,5 @@
  
 <script src="plugins/jQuery/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="plugins/validate/jquery.validate.js"></script>
-<script type="text/javascript">
-//http://www.runoob.com/jquery/jquery-plugin-validate.html
-$(document).ready(function() {
- $("#agentsForm").validate({
-		submitHandler: function() {
-			//验证通过后 的js代码写在这里
-			alert("submitted");   
-            form.submit();
-		},
-		errorClass :'error', //指定错误提示的 css 类名
-		errorElement :'p', //用什么标签标记错误
-		rules: {						
-			email: {
-				required: true,
-				email: true
-			},			
-			password:{
-				required: true,
-				minlength: 5
-			},			
-			confirm_password: {
-				required: true,
-				minlength: 5,
-				equalTo: "#password"
-			},		
-			company: "required",
-			responsibility: "required",
-			mobile:{
-				required: true,
-				digits:true,
-				minlength: 11
-			}
-		},
-		messages: {			
-			email: {
-				required: "请输入Email地址",
-				email: "请输入正确的email地址"
-			},
-			password: {
-				required: "请输入密码",
-				minlength: jQuery.format("密码不能小于{0}个字 符")
-			},
-			confirm_password: {
-				required: "请输入确认密码",
-				minlength: "确认密码不能小于5个字符",
-				equalTo: "两次输入密码不一致不一致"
-			},			
-			company: "请输入企业名称",
-			company: "请输入责任人姓名",
-			mobile: {
-				required: "请输入手机号码",
-				digits: "请输入正确的手机号码",
-				minlength: "请输入正确的手机号码"
-			}
-		}
-    });
-});
-</script>
 </body>
 </html>

@@ -76,14 +76,7 @@
 			<a href="assets_engineroom_edit.html" class="btn btn-info pull-right mr10"><i class="fa fa-plus"></i> 新增机房</a>
 		</div>
 		<div class="box-body engineroon">
-			<div class="map-box">
-				<div class="text-right">
-					<i class="fa fa-check-circle text-green"></i> 正常
-					<i class="fa fa-times-circle text-red"></i> 紧急
-					<i class="fa fa-exclamation-circle text-yellow"></i> 停止
-					<i class="fa fa-minus-circle text-gray"></i> 主要
-				</div>
-				
+			<div class="map-box">				
 				<!--第一个-->
 				<div class="map-txt">
 					<ul class="list-inline bg-info p10 text-primary">
@@ -95,12 +88,12 @@
 				</div>
 				<div class="map-area">
 					<div class="map" style="width:2000px; height:1500px;">  <!-- 根据地图大小这里给宽高 -->
-						<a href="#" class="normal" style="left:300px; top:150px;">正常</a>
-						<a href="monitor_engine_detail.html" class="urgent" style="left:350px; top:150px;">紧急</a>
-						<a href="monitor_engine_detail.html" class="stop" style="left:400px; top:150px;">停止</a>
-						<a href="#" class="main" style="left:450px; top:150px;">主要</a>
-						<a href="monitor_engine_detail.html" class="stop" style="left:1200px; top:550px;">停止</a>
-						<a href="#" class="main" style="left:450px; top:1100px;">主要</a>
+						<a id="m-1" href="#" style="left:300px; top:150px;">正常</a>
+						<a id="m-2" href="monitor_engine_detail.html" style="left:350px; top:150px;">紧急</a>
+						<a id="m-3" href="monitor_engine_detail.html" style="left:400px; top:150px;">停止</a>
+						<a id="m-4" href="#" style="left:450px; top:150px;">主要</a>
+						<a id="m-5" href="monitor_engine_detail.html" class="stop" style="left:1200px; top:550px;">停止</a>
+						<a id="m-6" href="#" style="left:450px; top:1100px;">主要</a>
 					</div>
 				</div>
 				<!--第一个 END-->
@@ -111,10 +104,16 @@
 </div>
 
 
+<div class="contextMenu" id="myMenu1">
+	<ul>
+		<li id="delete" class="text-red"><i class="fa fa-remove"></i> 删除</li>
+	</ul>
+</div> 
   
 
 <script src="plugins/jQuery/jquery.min.js"></script>
-<script src="plugins/jQueryUI/jquery-ui.min.js"></script>
+<script src="plugins/jQueryUI/jquery-ui.min.js"></script> <!-- 拖动 -->
+<script src="plugins/contextmenu/jquery.contextmenu.min.js"></script><!-- 右键删除 -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/app.min.js"></script>
 <script type="text/javascript">
@@ -129,6 +128,19 @@ $(function(){
 		scrollSensitivity: 100,
 		scroll: true 
 	});
+	
+	//右键删除
+	$('.map a').contextMenu('myMenu1',{
+		bindings:{
+			'delete': function(t) {
+				var that = t.id; //这个是点击的id
+				if(confirm('确定要删除吗?')){					
+					$('#'+ that).remove();
+				};				
+			}
+		}
+	});
+	
 });
 </script>
 </body>
