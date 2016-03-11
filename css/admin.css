@@ -1063,10 +1063,12 @@ table.text-center,table.text-center td,table.text-center th{text-align:center}
 .map-area{border:1px solid #a9bdcd; width:1068; height:501px;  background:url(../images/admin/map.jpg) repeat; overflow:auto;}
 .map{position:relative;background:url(../images/admin/map.jpg) repeat; min-height:499px; min-width:1032px;}
 .map a{display:block;width:50px;height:50px;background:url(../images/admin/s_icon.png) no-repeat;position:absolute;overflow:hidden;text-indent:-999px}
-.map a.normal{background-position:0 0}
+.map a.normal{background-position:0 -240px}
+.map a.normal{background-position:0 -240px}
 .map a.urgent{background-position:0 -60px}
 .map a.stop{background-position:0 -120px}
 .map a.main{background-position:0 -180px}
+.map a.warning{background-position:-60px -120px}
 
 .engine-box{padding:20px;min-height:775px}
 .engine-area{background:url(../images/admin/engine_box.png) no-repeat;width:210px;height:770px;margin:0 auto;padding:22px 0 40px 20px;overflow:hidden}

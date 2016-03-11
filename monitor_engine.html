@@ -7,7 +7,7 @@
 <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 <title>低保真 -- 机房监测</title>
 <!-- Bootstrap -->
-<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/admin.css">
 <script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
@@ -70,10 +70,11 @@
 	<div class="box">
 		<div class="box-header with-border clearfix">
 			<div class="pull-right f14 mr10">
-				<i class="fa fa-check-circle text-green"></i> 正常
-				<i class="fa fa-times-circle text-red"></i> 紧急
-				<i class="fa fa-exclamation-circle text-yellow"></i> 停止
-				<i class="fa fa-minus-circle text-gray"></i> 主要
+				<i class="fa fa-exclamation-triangle text-yellow"></i> 告警 
+				<i class="fa fa-times-circle text-red"></i> 紧急 
+				<i class="fa fa-exclamation-circle text-blue"></i> 一般 
+				<i class="fa fa-check-circle text-green"></i> 正常 
+				<i class="fa fa-minus-circle text-gray"></i> 主要 
 			</div>
 			<i class="fa fa-bar-chart"></i>
 			机房监测
@@ -117,6 +118,7 @@
 									<a style="left:350px; top:50px;" class="urgent" href="monitor_engine_detail.html">紧急</a>
 									<a style="left:400px; top:50px;" class="stop" href="monitor_engine_detail.html">停止</a>
 									<a style="left:450px; top:50px;" class="main" href="#">主要</a>
+									<a style="left:500px; top:50px;" class="warning" href="#">告警</a>
 									<a style="left:850px; top:50px;" class="urgent" href="monitor_engine_detail.html">紧急</a>
 									<a style="left:350px; top:350px;" class="urgent" href="monitor_engine_detail.html">紧急</a>
 								</div>
