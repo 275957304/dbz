@@ -1062,22 +1062,23 @@ table.text-center,table.text-center td,table.text-center th{text-align:center}
 .map-txt{margin:10px 0 10px 5px}
 .map-area{border:1px solid #a9bdcd; width:1068; height:501px;  background:url(../images/admin/map.jpg) repeat; overflow:auto;}
 .map{position:relative;background:url(../images/admin/map.jpg) repeat; min-height:499px; min-width:1032px;}
-.map a{display:block;width:50px;height:50px;background:url(../images/admin/s_icon.png) no-repeat;position:absolute;overflow:hidden;text-indent:-999px}
+.map a{display:block;width:50px;height:50px;background:url(../images/admin/s_icon.png) no-repeat;position:absolute;overflow:hidden;text-indent:-999px; padding:0!important;}
 .map a.normal{background-position:0 -240px}
 .map a.normal{background-position:0 -240px}
 .map a.urgent{background-position:0 -60px}
 .map a.stop{background-position:0 -120px}
 .map a.main{background-position:0 -180px}
-.map a.warning{background-position:-60px -120px}
+.map a.warning{background-position:-60px -240px}
 
 .engine-box{padding:20px;min-height:775px}
 .engine-area{background:url(../images/admin/engine_box.png) no-repeat;width:210px;height:770px;margin:0 auto;padding:22px 0 40px 20px;overflow:hidden}
 .engine-list{width:190px;height:770px;overflow:hidden;position:relative}
-.engine-list a{display:block;width:190px;height:15px;background:url(../images/admin/s_icon.png) no-repeat;position:absolute;left:0;overflow:hidden;text-indent:-999px}
-.engine-list a.normal{background-position:-60px 0}
+.engine-list a{display:block;width:190px;height:16px;background:url(../images/admin/s_icon.png) no-repeat -64px 0;position:absolute;left:0;overflow:hidden;text-indent:-999px;padding:0!important;}
+.engine-list a.normal{background-position:-60px -133px}
 .engine-list a.urgent{background-position:-60px -34px}
 .engine-list a.stop{background-position:-60px -67px}
-.engine-list a.main{background-position:-60px -100px}
+.engine-list a.main{background-position:-60px -99px}
+.engine-list a.warning{background-position:-60px -166px}
 .engine-box-right{min-height:775px;margin:0;padding:0 0 0 20px}
 .bg-tit{background-color:#f5f6fa;padding:8px 10px;font-size:14px;margin:0 0 15px;font-weight:700}
 .form-horizontal .form-group p{font-size:12px;margin:3px 0 0;color:#ccc}
