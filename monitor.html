@@ -134,33 +134,13 @@
 					<a id="close" href="javascript:;" class="btn btn-default mr10"><i class="fa fa-close"></i> 关闭</a>
 				</p>
 				
-				<!--
-				data-url, // 引入数据
-				data-cache: false, // 不缓存
-				data-height: 400, // 设置高度，会启用固定表头的特性
-				data-striped: true, // 隔行加亮
-				data-pagination: true, // 开启分页功能
-				data-pageSize: 50, // 设置默认分页为 50
-				data-pageList: [10, 25, 50, 100, 200], // 自定义分页列表
-				data-search: true, // 开启搜索功能
-				data-showColumns: true, // 开启自定义列显示功能
-				data-showRefresh: true, // 开启刷新功能
-				data-minimumCountColumns: 2, // 设置最少显示列个数
-				data-clickToSelect: true, // 单击行即可以选中
-				data-sortName: 'name', // 设置默认排序为 name
-				data-sortOrder: 'desc', // 设置排序为反序 desc
-				data-smartDisplay: true, // 智能显示 pagination 和 cardview 等
-				-->
 				
-				<table class="table table-bordered table-striped thead-center"
-					   data-toggle="table"
-					   data-height="450"
-					   data-page-size="10">
+				<table class="table table-bordered table-striped thead-center">
 					<thead>
 						<tr>
-							<th data-field="state" data-checkbox="true"></th>
-							<th data-sortable="true">告警级别</th>
-							<th data-sortable="true">发生时间</th>
+							<th><input type="checkbox"></th>
+							<th>告警级别</th>
+							<th>发生时间</th>
 							<th>设备名称</th>
 							<th>IP</th>
 							<th>关联业务</th>
@@ -252,216 +232,7 @@
 							<td>李科</td>
 							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
 						</tr>
-						<tr>
-							<td class="bs-checkbox "><input type="checkbox"></td>
-							<td><i class="f14 fa fa-times-circle text-red"></i> <span class="text-red">紧急</span></td>
-							<td>2011-8-12 16:05:26</td>
-							<td><a href="monitor_equipment.html">tomcat_87</a></td>
-							<td>175.12.10.40</td>
-							<td>OA系统</td>
-							<td>服务器</td>
-							<td>Proedge R720</td>
-							<td>CPU</td>
-							<td>cpu1:Load Average</td>
-							<td>李明</td>
-							<td>李科</td>
-							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
-						</tr>
-						<tr>
-							<td class="bs-checkbox "><input type="checkbox"></td>
-							<td><i class="f14 fa fa-check-circle text-green"></i> <span class="text-green">正常</span></td>
-							<td>2010-10-2 16:45:26</td>
-							<td><a href="monitor_equipment.html">tomcat_87</a></td>
-							<td>172.15.10.40</td>
-							<td>OA系统</td>
-							<td>服务器</td>
-							<td>Proedge R720</td>
-							<td>CPU</td>
-							<td>cpu1:Load Average</td>
-							<td>李明</td>
-							<td>李科</td>
-							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
-						</tr>
-						<tr>
-							<td class="bs-checkbox "><input type="checkbox"></td>
-							<td><i class="f14 fa fa-times-circle text-red"></i> <span class="text-red">紧急</span></td>
-							<td>2015-8-12 16:05:26</td>
-							<td><a href="monitor_equipment.html">tomcat_87</a></td>
-							<td>179.12.10.40</td>
-							<td>OA系统</td>
-							<td>服务器</td>
-							<td>Proedge R720</td>
-							<td>CPU</td>
-							<td>cpu1:Load Average</td>
-							<td>李明</td>
-							<td>李科</td>
-							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
-						</tr>
-						<tr>
-							<td class="bs-checkbox "><input type="checkbox"></td>
-							<td><i class="f14 fa fa-check-circle text-green"></i> <span class="text-green">正常</span></td>
-							<td>2010-10-12 6:45:26</td>
-							<td><a href="monitor_equipment.html">tomcat_87</a></td>
-							<td>172.12.17.40</td>
-							<td>OA系统</td>
-							<td>服务器</td>
-							<td>Proedge R720</td>
-							<td>CPU</td>
-							<td>cpu1:Load Average</td>
-							<td>李明</td>
-							<td>李科</td>
-							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
-						</tr>
-						<tr>
-							<td class="bs-checkbox "><input type="checkbox"></td>
-							<td><i class="f14 fa fa-times-circle text-red"></i> <span class="text-red">紧急</span></td>
-							<td>2015-10-12 10:45:26</td>
-							<td><a href="monitor_equipment.html">tomcat_87</a></td>
-							<td>172.12.12.40</td>
-							<td>OA系统</td>
-							<td>服务器</td>
-							<td>Proedge R720</td>
-							<td>CPU</td>
-							<td>cpu1:Load Average</td>
-							<td>李明</td>
-							<td>李科</td>
-							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
-						</tr>
-						<tr>
-							<td class="bs-checkbox "><input type="checkbox"></td>
-							<td><i class="f14 fa fa-check-circle text-green"></i> <span class="text-green">正常</span></td>
-							<td>2015-05-12 16:45:26</td>
-							<td><a href="monitor_equipment.html">tomcat_87</a></td>
-							<td>172.15.15.40</td>
-							<td>OA系统</td>
-							<td>服务器</td>
-							<td>Proedge R720</td>
-							<td>CPU</td>
-							<td>cpu1:Load Average</td>
-							<td>李明</td>
-							<td>李科</td>
-							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
-						</tr>
-						<tr>
-							<td class="bs-checkbox "><input type="checkbox"></td>
-							<td><i class="f14 fa fa-check-circle text-green"></i> <span class="text-green">正常</span></td>
-							<td>2014-4-12 16:45:26</td>
-							<td><a href="monitor_equipment.html">tomcat_87</a></td>
-							<td>175.12.5.40</td>
-							<td>OA系统</td>
-							<td>服务器</td>
-							<td>Proedge R720</td>
-							<td>CPU</td>
-							<td>cpu1:Load Average</td>
-							<td>李明</td>
-							<td>李科</td>
-							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
-						</tr>
-						<tr>
-							<td class="bs-checkbox "><input type="checkbox"></td>
-							<td><i class="f14 fa fa-exclamation-circle text-blue"></i> <span class="text-blue">一般</span></td>
-							<td>2015-12-12 10:45:26</td>
-							<td><a href="monitor_equipment.html">tomcat_87</a></td>
-							<td>172.12.10.450</td>
-							<td>OA系统</td>
-							<td>服务器</td>
-							<td>Proedge R720</td>
-							<td>CPU</td>
-							<td>cpu1:Load Average</td>
-							<td>李明</td>
-							<td>李科</td>
-							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
-						</tr>
-						<tr>
-							<td class="bs-checkbox "><input type="checkbox"></td>
-							<td><i class="f14 fa fa-check-circle text-green"></i> <span class="text-green">正常</span></td>
-							<td>2012-10-12 14:45:26</td>
-							<td><a href="monitor_equipment.html">tomcat_87</a></td>
-							<td>175.10.10.40</td>
-							<td>OA系统</td>
-							<td>服务器</td>
-							<td>Proedge R720</td>
-							<td>CPU</td>
-							<td>cpu1:Load Average</td>
-							<td>李明</td>
-							<td>李科</td>
-							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
-						</tr>
-						<tr>
-							<td class="bs-checkbox "><input type="checkbox"></td>
-							<td><i class="f14 fa fa-check-circle text-green"></i> <span class="text-green">正常</span></td>
-							<td>2010-8-12 16:45:26</td>
-							<td><a href="monitor_equipment.html">tomcat_87</a></td>
-							<td>272.12.10.40</td>
-							<td>OA系统</td>
-							<td>服务器</td>
-							<td>Proedge R720</td>
-							<td>CPU</td>
-							<td>cpu1:Load Average</td>
-							<td>李明</td>
-							<td>李科</td>
-							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
-						</tr>
-						<tr>
-							<td class="bs-checkbox "><input type="checkbox"></td>
-							<td><i class="f14 fa fa-check-circle text-green"></i> <span class="text-green">正常</span></td>
-							<td>2010-10-10 16:05:26</td>
-							<td><a href="monitor_equipment.html">tomcat_87</a></td>
-							<td>175.10.10.40</td>
-							<td>OA系统</td>
-							<td>服务器</td>
-							<td>Proedge R720</td>
-							<td>CPU</td>
-							<td>cpu1:Load Average</td>
-							<td>李明</td>
-							<td>李科</td>
-							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
-						</tr>
-						<tr>
-							<td class="bs-checkbox "><input type="checkbox"></td>
-							<td><i class="f14 fa fa-check-circle text-green"></i> <span class="text-green">正常</span></td>
-							<td>2005-10-12 10:45:26</td>
-							<td><a href="monitor_equipment.html">tomcat_87</a></td>
-							<td>170.12.10.40</td>
-							<td>OA系统</td>
-							<td>服务器</td>
-							<td>Proedge R720</td>
-							<td>CPU</td>
-							<td>cpu1:Load Average</td>
-							<td>李明</td>
-							<td>李科</td>
-							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
-						</tr>
-						<tr>
-							<td class="bs-checkbox "><input type="checkbox"></td>
-							<td><i class="f14 fa fa-check-circle text-green"></i> <span class="text-green">正常</span></td>
-							<td>2015-12-12 16:45:26</td>
-							<td><a href="monitor_equipment.html">tomcat_87</a></td>
-							<td>172.10.10.40</td>
-							<td>OA系统</td>
-							<td>服务器</td>
-							<td>Proedge R720</td>
-							<td>CPU</td>
-							<td>cpu1:Load Average</td>
-							<td>李明</td>
-							<td>李科</td>
-							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
-						</tr>
-						<tr>
-							<td class="bs-checkbox "><input type="checkbox"></td>
-							<td><i class="f14 fa fa-check-circle text-green"></i> <span class="text-green">正常</span></td>
-							<td>2005-10-10 16:45:26</td>
-							<td><a href="monitor_equipment.html">tomcat_87</a></td>
-							<td>170.12.15.40</td>
-							<td>OA系统</td>
-							<td>服务器</td>
-							<td>Proedge R720</td>
-							<td>CPU</td>
-							<td>cpu1:Load Average</td>
-							<td>李明</td>
-							<td>李科</td>
-							<td><a class="btn btn-primary btn-xs mr10" href="monitor_detail.html" data-original-title="详情" data-toggle="tooltip" data-placement="top"><i class="fa fa-list"></i></a><a href="javascript:void(0)" class="remove btn btn-danger btn-xs" data-original-title="关闭" data-toggle="tooltip" data-placement="top"><i class="fa fa-close"></i></a></td>
-						</tr>
+						
 					</tbody>
 				</table>
 				<!-- 分页 -->
@@ -505,18 +276,35 @@
 
 
 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>弹出测试 </p>
+        <p>弹出测试 </p> 
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <script src="plugins/jQuery/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<!-- BootstrapTable -->
-<link rel="stylesheet" href="plugins/BootstrapTable/bootstrap-table.min.css">
-<script src="plugins/BootstrapTable/bootstrap-table.min.js"></script>
-<script src="plugins/BootstrapTable/bootstrap-table-zh-CN.min.js"></script> <!--语言包放在bootstrap-table.min.js 之后-->
-
 <link href="plugins/timepicker/bootstrap-datetimepicker.min.css" rel="stylesheet"><!--日期和时间样式-->
 <script type="text/javascript" src="plugins/timepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script><!--日期和时间表单组件-->
 <script type="text/javascript" src="plugins/timepicker/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script><!--日期和时间表单组件-->
 <script src="js/app.min.js"></script>
 
+<script language='javascript'>
+$(document).ready(function(){
+	$('.remove').on('click',function(){
+		$('#myModal').modal('show');   //这里的#myModal   跟279行的id要一样
+	})
+});
+</script>
 </body>
 </html>

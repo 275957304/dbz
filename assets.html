@@ -141,19 +141,13 @@
 							<a class="btn btn-default mr10" href="#"><i class="glyphicon glyphicon-save"></i> 批量下载</a>
 						</p>
 						
-						
-						<table id="table" class="table table-bordered table-striped"
-						data-toggle="table"
-						data-mobile-responsive="true"		
-						data-striped = "true"
-						data-pagination="true"
-						data-page-size="10"> <!-- 这里可设置表格高度 -->
+						<table id="assetsTable" class="table table-bordered table-striped">
 							<thead>
 								<tr>
-									<th data-field="state" data-checkbox="true"></th>
-									<th>监测状态</th>
-									<th data-sortable="true">带外IP</th>
-									<th>设备名称</th>
+									<th><input type="checkbox"></th>
+									<th class="sortable">监测状态</th>
+									<th class="sortable">带外IP</th>
+									<th class="sortable">设备名称</th>
 									<th>关联业务</th>
 									<th>所在位置</th>
 									<th>厂商</th>
@@ -398,20 +392,39 @@
 			</div>
 		</div>
 		
-		
 	</div>
 </div>
-
-
-
+ 
+ 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="plugins/jQuery/jquery.min.js"></script>
 <script src="plugins/jQueryUI/jquery-ui.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/app.min.js"></script>
-<!-- BootstrapTable -->
-<link rel="stylesheet" href="plugins/BootstrapTable/bootstrap-table.min.css">
-<script src="plugins/BootstrapTable/bootstrap-table.min.js"></script>
-<script src="plugins/BootstrapTable/bootstrap-table-zh-CN.min.js"></script> <!--语言包放在bootstrap-table.min.js 之后-->
+<script src="plugins/chromatable/jquery.chromatable.js"></script><!--表单头部固定-->
+
+<script>
+	$(document).ready(function () {
+		$("#assetsTable").chromatable({width: "100%",height: "400px",scrolling: "yes"});  //固定表单头部设置
+	})
+
+	
+	//  排序吧，  程序去实现
+	$(function(){	    	
+		var $header = $('table').find('>thead'); 
+		$header.find('.sortable').on('click',function(){
+			if($(this).hasClass('asc')){
+				$(this).addClass('desc');
+				$(this).removeClass('asc');
+				alert($(this).text() + '排序 desc');
+			}else{
+				$(this).addClass('asc');
+				$(this).removeClass('desc');
+				alert($(this).text() + '排序 asc');
+			}
+		}); 
+	})
+ 
+</script>
 </body>
 </html>
